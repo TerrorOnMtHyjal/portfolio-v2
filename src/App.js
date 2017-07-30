@@ -7,6 +7,7 @@ class App extends Component {
     return (
       <div className="App">
         <a href="http://protopage.dustwise.com">Protopage</a>
+        <a href="http://pogtracker.com">Pogtracker</a>
       </div>
     );
   }
