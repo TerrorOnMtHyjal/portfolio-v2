@@ -6,6 +6,10 @@
     "react": "^15.6.1",
     "react-dom": "^15.6.1"
   },
+  "engines" : { 
+    "node" : ">=8.0.0",
+    "npm" : ">=5.0.0"
+   },
   "devDependencies": {
     "react-scripts": "^1.0.10"
   },
@@ -15,7 +19,7 @@
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
   },
-  "description": "This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).",
+  "description": "Portfolio of Jared Mohney",
   "main": "index.js",
   "author": "Jared Mohney",
   "license": "ISC"
