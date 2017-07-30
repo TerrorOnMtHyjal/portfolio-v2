@@ -6,8 +6,8 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <a href="http://protopage.dustwise.com">Protopage</a>
-        <a href="http://pogtracker.com">Pogtracker</a>
+        <h1><a href="http://protopage.dustwise.com">Protopage</a></h1>
+        <h1><a href="http://pogtracker.com">Pogtracker</a></h1>
       </div>
     );
   }
