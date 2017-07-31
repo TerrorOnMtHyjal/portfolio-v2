@@ -1,14 +1,41 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
+import styled from 'styled-components';
 import './App.css';
+
+const AppW = styled.div`
+  display: flex;
+  flex-flow: column;
+  margin: 0;
+  padding: 0;
+`;
+
+const StartCard = styled.div`
+  font-family: 'Permanent Marker', sans-serif;
+  display: flex;
+  height: 100vh;
+  font-size: 6em;
+  margin: 0;
+  padding: 0;
+  justify-content: center;
+  align-items: center;
+
+  & > h1 {
+    margin: 0;
+    padding: 0;
+  }
+`;
 
 class App extends Component {
   render() {
     return (
-      <div className="App">
-        <h1><a href="http://protopage.dustwise.com">Protopage</a></h1>
-        <h1><a href="http://pogtracker.com">Pogtracker</a></h1>
-      </div>
+      <AppW className="App">
+        <StartCard>
+          <h1>Jared Mohney</h1>
+        </StartCard>
+        <StartCard>
+          <h1>HOW ARE YOU</h1>
+        </StartCard>  
+      </AppW>
     );
   }
 }
