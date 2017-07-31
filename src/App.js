@@ -10,6 +10,7 @@ const AppW = styled.div`
   perspective: 1px;
   perspective-origin: 0 0;
   font-size: 3rem;
+  font-family: 'Roboto Slab', serif;
 `;
 
 const IntroCard = styled.div`
@@ -44,7 +45,6 @@ const Names = styled.div`
   }
 
   & > h1 {
-    font-family: 'Roboto Slab', serif;
     font-weight: 700;
   }
 
@@ -69,18 +69,23 @@ const Links = styled.div`
   }
 `;
 
-const FirstCommentCard = styled.div`
+
+const TripleCard = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
   transform-origin: 0 0;
   transform: translateZ(0) scale(1);
+  height: 30vh;
   background: white;
-  height: 300vh;
+`;
 
+const TripleCardInner = styled.div`
   display: flex;
-  flex-flow: column;
   align-items: center;
-  justify-content: space-around;
-  font-family: 'Roboto Slab', serif;   
-  font-size: 0.5em;
+  width: 70%;
+  justify-content: space-between;
+  font-size: 0.35em;
 
   & > h1 {
     font-weight: 400;
@@ -90,7 +95,158 @@ const FirstCommentCard = styled.div`
   }
 `;
 
+const Project1 = styled.div`
+  display: flex;
+  position: relative;
+  transform-origin: 0 0;
+  justify-content: center;
+  align-items: center;
+  transform: translateZ(0) scale(1);
+  height: 75vh;
+  background: black;
+  font-size: 0.8em;
+  overflow-y: hidden;
+  overflow-x: hidden;
+  border-bottom: 2px solid silver;
+  
+  & > img {
+    position: absolute;
+    left: 0;
+    top: -32%;
+    width: 100%;
+    height: auto;
+    opacity: 0.1;
+    z-index: 2;
+  }
+
+  &:before {
+    content:                   '';
+    position:                  absolute;
+    height: 20%;
+    top:                       40%;
+    right:                     0;
+    bottom:                    0;
+    left:                      0;
+    background-image:          linear-gradient(to left, rgba(0, 250, 206, 1), rgba(0, 0, 0, 0));
+    opacity:                   .3;
+  }
+`;
+
+const Project1Inner = styled.div`
+  display: flex;
+  align-items: flex-end;
+  flex-flow: column;
+  color: white;
+  width: 70%;
+  z-index: 3;
+`;
+
+const Project2 = styled.div`
+  display: flex;
+  position: relative;
+  transform-origin: 0 0;
+  justify-content: center;
+  align-items: center;
+  transform: translateZ(0) scale(1);
+  height: 75vh;
+  background: black;
+  font-size: 0.8em;
+  overflow-y: hidden;
+  overflow-x: hidden;
+  border-bottom: 2px silver solid;
+  
+  & > img {
+    position: absolute;
+    left: 0;
+    top: -44%;
+    width: 170%;
+    height: auto;
+    opacity: 0.1;
+    z-index: 2;
+  }
+
+  &:before {
+    content:                   '';
+    position:                  absolute;
+    height: 20%;
+    top:                       40%;
+    right:                     0;
+    bottom:                    0;
+    left:                      0;
+    background-image:          linear-gradient(to right, rgba(0, 250, 206, 1), rgba(0, 0, 0, 0));
+    opacity:                   .3;
+  }
+`;
+
+const Project2Inner = styled.div`
+  display: flex;
+  align-items: flex-start;
+  flex-flow: column;
+  color: white;
+  width: 70%;
+  z-index: 3;
+`;
+
+const Project3 = styled.div`
+  display: flex;
+  position: relative;
+  transform-origin: 0 0;
+  justify-content: center;
+  align-items: center;
+  transform: translateZ(0) scale(1);
+  height: 75vh;
+  background: black;
+  font-size: 0.8em;
+  overflow-y: hidden;
+  overflow-x: hidden;
+  
+  & > img {
+    position: absolute;
+    left: -300px;
+    top: -5%;
+    width: 120%;
+    height: auto;
+    opacity: 0.1;
+    z-index: 2;
+  }
+
+  &:before {
+    content:                   '';
+    position:                  absolute;
+    height: 20%;
+    top:                       40%;
+    right:                     0;
+    bottom:                    0;
+    left:                      0;
+    background-image:          linear-gradient(to left, rgba(0, 250, 206, 1), rgba(0, 0, 0, 0));
+    opacity:                   .3;
+  }
+`;
+
+const Project3Inner = styled.div`
+  display: flex;
+  align-items: flex-end;
+  flex-flow: column;
+  color: white;
+  width: 70%;
+  z-index: 3;
+`;
+
+const ProjectTitle = styled.h1`
+  font-family: 'Permanent Marker';
+  color: #ff00ae;
+  margin: 0;
+  padding: 0;
+`;
+
+const Features = styled.p`
+  margin: 0;
+  padding: 0;
+  font-size: 0.5em;
+`;
+
 class App extends Component {
+
   render() {
     return (
       <AppW className="App">
@@ -110,11 +266,37 @@ class App extends Component {
             </Links>
           </IntroCardInner>
         </IntroCard>
-        <FirstCommentCard>
-          <h1><span>coding</span> full stack</h1>
-          <h1><span>designing</span> digital candy</h1>
-          <h1><span>working</span> for my future</h1>
-        </FirstCommentCard>
+        <TripleCard>
+          <TripleCardInner>
+            <h1><span>coding</span> full stack</h1>
+            <h1><span>designing</span> digital candy</h1>
+            <h1><span>working</span> for my future</h1>
+          </TripleCardInner>
+        </TripleCard>
+
+        <Project1>
+          <Project1Inner>
+            <ProjectTitle>PROTOPAGE</ProjectTitle>
+            <Features>Mobile First | React | Redux | Google Fonts API</Features>
+          </Project1Inner>
+          <img src={require('./images/protopage-min.png')} alt=""/>
+        </Project1>
+
+        <Project2>
+          <Project2Inner>
+            <ProjectTitle>POGTRACKER</ProjectTitle>
+            <Features>MongoDB | React Router 4 | React | Redux | AWS</Features>
+          </Project2Inner>
+          <img src={require('./images/pogtracker-min-2.png')} alt=""/>
+        </Project2>
+
+        <Project3>
+          <Project3Inner>
+            <ProjectTitle>ROCKET GARAGE</ProjectTitle>
+            <Features>Postgresql | Passport | React | Redux | Thunk</Features>
+          </Project3Inner>
+          <img src={require('./images/rocket-garage-min.png')} alt=""/>
+        </Project3>
       </AppW>
     );
   }
