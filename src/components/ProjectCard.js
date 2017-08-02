@@ -4,14 +4,19 @@ const Waypoint = require('react-waypoint');
 
 const ProjectCardW = styled.div`
   perspective: 1000px;
-  width: 100vw;
-  height: 100vh;
-  background: #000;
-  border-bottom: 2px solid silver;
   display: flex;
+  flex-flow: column;
   transform-origin: 0 0;
   transform: translateZ(0) scale(1);
+  background: #000;
   overflow: hidden;
+  border-bottom: 2px solid silver;
+  font-size: 1rem;
+  height: 100vh;
+
+  @media screen and (min-width: 1150px){
+    height: 100vh;
+  }
 `;
 
 const ProjectCardInnerW = styled.div`
@@ -46,13 +51,16 @@ const ProjectCardInnerW = styled.div`
 const WebsiteCapture = styled.div`
   transition: all 1s ease-in-out;
   z-index: 1;
-  width: 5%;
-  height: 5%;
-
+  height: auto;
+  transform: ${props => props.viewable ? `rotateY(${props.right ? "-15deg" : "15deg"}) scale(1)` : 'rotateY(0deg) scale(1)'};
+  margin: 2em 0;
 
   & > img {
     transition: all 2s;
     overflow: hidden;
+    max-width: 90%;
+    max-height: 90%;
+    margin: 1.5em auto;
   }
 
   @media screen and (min-width: 1150px){
@@ -104,9 +112,9 @@ class ProjectCard extends Component {
       <Waypoint bottomOffset="70%" onEnter={() => this.handleEnter()}>
         <div>
           <ProjectCardW>
-            {/*<WebsiteCapture viewable={this.state.inView} right={this.props.right}>
+            <WebsiteCapture viewable={this.state.inView} right={this.props.right}>
               <img src={this.props.img} alt=""/>
-            </WebsiteCapture>*/}
+            </WebsiteCapture>
             <ProjectCardInnerW right={this.props.right}>
               {this.props.children}
             </ProjectCardInnerW>
