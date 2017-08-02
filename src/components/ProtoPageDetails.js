@@ -5,7 +5,8 @@ const Waypoint = require('react-waypoint');
 const Details = styled.div`
   display: flex;
   flex-flow: column;
-  align-items: flex-end;
+  width: 40%;
+  align-items: ${props => props.right ? "flex-end" : "flex-start"};
   & > h1 {
     font-family: "Permanent Marker", sans-serif;
     color: #ff00ae;
@@ -32,8 +33,9 @@ const Feature = styled.p`
 const Description = styled.p`
   font-size: 1.25rem;
   color: white;
-  text-align: right;
-  width: 40%;
+  text-align: ${props => props.right ? "right" : "left"};
+  margin: 0;
+  padding: 0;
 `;
 
 class ProtoPageDetails extends Component {
@@ -63,12 +65,12 @@ class ProtoPageDetails extends Component {
     return (
         <Waypoint bottomOffset="30%" onEnter={() => this.handleEnter()}>
           <div>
-              <Details>
+              <Details right={this.props.right}>
                 <h1>ProtoPage</h1>
                 <Features>
                   {this.generateFeatures(["Mobile First", " | ", "React",  " | ", "Redux",  " | ", "Google Fonts API"])}
                 </Features>
-                <Description>
+                <Description right={this.props.right}>
                   Tired of your prototypes lacking pizazz but don't want to spend the time finding compatible fonts? 
                   Quickly randomize through Google fonts, lock in the ones you like and find those pairings in a fraction of the time!
                 </Description>

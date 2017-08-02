@@ -18,11 +18,15 @@ const ProjectCardInnerW = styled.div`
   display: flex;
   flex-flow: column;
   justify-content: center;
-  align-items: ${props => props.right ? "flex-start" : "flex-end"};
   width: 70%;
   margin: 0 auto;
   transition: all 1s ease-in;
   z-index: 2;
+
+  & > div {
+    display: flex;
+    justify-content: ${props => props.right ? "flex-start" : "flex-end"};
+  }
 `;
 
 const WebsiteCapture = styled.div`
@@ -32,19 +36,6 @@ const WebsiteCapture = styled.div`
   top: 0;
   transition: all 1s ease-in-out;
   z-index: 1;
-  ${props => props.right 
-    ? 
-      `
-        right: ${props => props.viewable ? "-20%" : 0};
-        transform: ${props => props.viewable ? 'rotateY(-20deg) scale(0.4)' : 'rotateY(0deg) scale(1)'};
-      `
-    :
-      `
-        left: ${props => props.viewable ? "-20%" : 0};
-        transform: ${props => props.viewable ? 'rotateY(20deg) scale(0.4)' : 'rotateY(0deg) scale(1)'};
-      `
-  }
-
   ${props => props.right ? "left: " : "right: "}${props => props.viewable ? "20%" : 0};
   transform: ${props => props.viewable ? `rotateY(${props.right ? "-20deg" : "20deg"}) scale(0.4)` : 'rotateY(0deg) scale(1)'};
 
@@ -84,7 +75,7 @@ class ProjectCard extends Component {
       <Waypoint bottomOffset="70%" onEnter={() => this.handleEnter()}>
         <div>
           <ProjectCardW>
-            <ProjectCardInnerW>
+            <ProjectCardInnerW right={this.props.right}>
               {this.props.children}
             </ProjectCardInnerW>
             <WebsiteCapture viewable={this.state.inView} right={this.props.right}>
