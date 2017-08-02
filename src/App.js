@@ -4,6 +4,8 @@ import './App.css';
 
 import IntroCard from './components/IntroCard';
 import TaglineCard from './components/TaglineCard';
+import ProjectCard from './components/ProjectCard';
+import ProtoPageCard from './components/ProtoPageCard';
 
 const AppW = styled.div`
   height: 100vh;
@@ -23,6 +25,18 @@ class App extends Component {
       <AppW className="App">
         <IntroCard />
         <TaglineCard/>
+
+        <ProjectCard img={require('./images/protopage-min.png')}>
+          <ProtoPageCard />
+        </ProjectCard>
+
+        <ProjectCard img={require('./images/pogtracker-min-2.png')}>
+          
+        </ProjectCard>
+
+        <ProjectCard img={require('./images/rocket-garage-min.png')}>
+          
+        </ProjectCard>
       </AppW>
     );
   }

@@ -26,7 +26,8 @@ const Names = styled.div`
   display: flex;
   flex-flow: column;
   align-items: flex-end;
-  transition: all 2s ease-out;
+  transition: all 2s ease-in-out;
+  transition-delay: 0.5s;
   opacity: ${props => props.viewable ? 1 : 0};
 
   & > h1, h2 {
@@ -49,11 +50,12 @@ const Names = styled.div`
 
 const Links = styled.div`
   display: flex;
-  justify-content: center;
+  justify-content: flex-end;
   transition: all 2s ease-out;
   opacity: ${props => props.viewable ? 1 : 0};
   margin-top: 10px;
   margin-right: 10px;
+
   & > a {
     margin-left: 15px;
     & > img {
