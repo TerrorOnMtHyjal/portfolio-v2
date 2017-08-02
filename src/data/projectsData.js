@@ -13,7 +13,7 @@ const projectsData = {
     description : ` Using the power of Twitch Chat, find the top highlights from a broadcast replay! 
                     Top FailFish moments? We got it. PogChamps? No worries.
                     We store the replay data in MongoDB, ready to deliver it to the next interested user, instantly!`,
-    image : './images/pogtracker-min.png',
+    image : './images/pogtracker-min-2.png',
     right: false
   },
   rocketGarage : {
@@ -21,7 +21,11 @@ const projectsData = {
     features : ["PostgreSQL", " | ", "React Router 4", " | ", "React",  " | ", "Redux",  " | ", "Twitch API"],
     description : ``,
     image : './images/rocket-cropped.png',
-    right: true
+    right: true,
+    imagePlacement : `
+      top: -180px;
+      left: 0;
+    `
   }
 };
 

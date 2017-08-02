@@ -6,7 +6,6 @@ const ProjectCardW = styled.div`
   perspective: 1000px;
   display: flex;
   flex-flow: column;
-  align-items: center;
   transform-origin: 0 0;
   transform: translateZ(0) scale(1);
   background: #000;
@@ -15,15 +14,13 @@ const ProjectCardW = styled.div`
   font-size: 1rem;
 
   @media screen and (min-width: 1150px){
-    
+
   }
 `;
 
 const ProjectCardInnerW = styled.div`
   display: flex;
   flex-flow: column;
-  justify-content: center;
-  width: 90%;
   margin: 0 auto;
   transition: all 1s ease-in;
   z-index: 2;
@@ -48,19 +45,25 @@ const ProjectCardInnerW = styled.div`
   }
 `;
 
+
+
 const WebsiteCapture = styled.div`
+  position: relative;
   transition: all 2s ease-in-out;
   z-index: 1;
-  height: auto;
-  transform: ${props => props.viewable ? 'rotateX(15deg) scale(1)' : 'rotateY(0deg) scale(1)'};
-  margin: 1.5em 0;
+  align-self: flex-start;
+  width: 100%;
+  height: 100%;
+  // transform: ${props => props.viewable ? 'rotateX(15deg) scale(1)' : 'rotateY(0deg) scale(1)'};
 
   & > img {
+    position: absolute;
+    top: -20%;
+    left: -50%;
+    width: 1000%;
+    opacity: 0.5;
     transition: all 2s;
     overflow: hidden;
-    max-width: 90%;
-    max-height: 90%;
-    margin: 1.5em auto;
   }
 
   @media screen and (min-width: 1150px){
@@ -78,8 +81,6 @@ const WebsiteCapture = styled.div`
     & > img {
       transition: all 2s;
       position: absolute;
-      top: 0;
-      left: 0;
       overflow: hidden;
     }
 
@@ -112,7 +113,7 @@ class ProjectCard extends Component {
       <Waypoint bottomOffset="70%" onEnter={() => this.handleEnter()}>
         <div>
           <ProjectCardW>
-            <WebsiteCapture viewable={this.state.inView} right={this.props.right}>
+            <WebsiteCapture viewable={this.state.inView} right={this.props.right} placement={this.props.imagePlacement}>
               <img src={this.props.img} alt=""/>
             </WebsiteCapture>
             <ProjectCardInnerW right={this.props.right}>
