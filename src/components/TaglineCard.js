@@ -10,9 +10,14 @@ const TaglineCardW = styled.div`
   transform: translateZ(0) scale(1);
   background: white;
   width: 100%;
+  font-size: 0.8rem;
 
   & > div {
     width: 100%;
+  }
+
+  @media screen and (min-width: 550px){
+    font-size: 1rem;
   }
 `;
 
@@ -23,9 +28,8 @@ const TaglineCardInner = styled.div`
   flex-flow: column;
   justify-content: center;
   align-items: center;
-  font-size: 0.35em;
   transition: opacity 2s ease-out;
-  padding: 50px 0;
+  padding: 4em 0;
 
   @media screen and (min-width:840px){
     flex-flow: row;
@@ -38,13 +42,13 @@ const TaglineCardInner = styled.div`
 `;
 
 const Tagline = styled.div`
-  padding: 50px 0;
   display: flex;
   flex-flow: column;
   align-items: center;
   transition: all 1s ease-out;
   transition-delay: ${props => props.delay};
   opacity: ${props => props.viewable ? 1 : 0};
+  padding: 4em 0;
 
   & > h1 {
     padding: 0;
