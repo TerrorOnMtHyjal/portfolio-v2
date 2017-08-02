@@ -18,7 +18,7 @@ const ProjectCardInnerW = styled.div`
   display: flex;
   flex-flow: column;
   justify-content: center;
-  width: 70%;
+  width: 80%;
   margin: 0 auto;
   transition: all 1s ease-in;
   z-index: 2;

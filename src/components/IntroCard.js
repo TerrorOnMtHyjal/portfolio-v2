@@ -14,19 +14,43 @@ const IntroCardW = styled.div`
 `;
 
 const IntroCardInner = styled.div`
-  width: 70%;
-  margin: 0 auto;
+  width: 95%;
   display: flex;
   flex-flow: column;
   justify-content: center;
-  align-items: flex-end;
+  font-size: 1.10rem;
+  align-items: center;
+
+  @media screen and (min-width: 360px){
+    font-size: 1.25rem;
+    align-items: center;
+  }
+
+  @media screen and (min-width: 480px){
+    font-size: 1.5rem;
+    align-items: center;
+  }
+
+  @media screen and (min-width: 650px){
+    font-size: 2rem;
+    align-items: center;
+  }
+
+  @media screen and (min-width: 850px){
+    font-size: 3rem;
+  }
+
+  @media screen and (min-width: 1150px){
+    width: 80%;
+    align-items: flex-end;
+  }
 `;
 
 const Names = styled.div`
   display: flex;
   flex-flow: column;
   align-items: flex-end;
-  transition: all 2s ease-in-out;
+  transition: opacity 2s ease-in-out;
   transition-delay: 0.5s;
   opacity: ${props => props.viewable ? 1 : 0};
 

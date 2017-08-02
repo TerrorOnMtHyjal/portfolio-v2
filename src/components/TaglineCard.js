@@ -21,7 +21,7 @@ const TaglineCardInner = styled.div`
   display: flex;
   align-items: center;
   margin: 0 auto;
-  width: 70%;
+  width: 80%;
   justify-content: space-between;
   font-size: 0.35em;
   transition: all 2s ease-out;
