@@ -5,7 +5,10 @@ import './App.css';
 import IntroCard from './components/IntroCard';
 import TaglineCard from './components/TaglineCard';
 import ProjectCard from './components/ProjectCard';
+import ProjectDetails from './components/ProjectDetails';
 import ProtoPageDetails from './components/ProtoPageDetails';
+import PogTrackerDetails from './components/PogTrackerDetails';
+import projectData from './data/projectsData';
 
 const AppW = styled.div`
   height: 100vh;
@@ -19,23 +22,38 @@ const AppW = styled.div`
 `;
 
 class App extends Component {
-
   render() {
+
+    console.log(projectData.protoPage);
+
     return (
       <AppW className="App">
         <IntroCard />
         <TaglineCard/>
 
         <ProjectCard img={require('./images/protopage-cropped.png')} right>
-          <ProtoPageDetails right/>
+          <ProjectDetails
+            title={projectData.protoPage.title}
+            features={projectData.protoPage.features}
+            description={projectData.protoPage.description}
+            right
+          />
         </ProjectCard>
 
-        <ProjectCard img={require('./images/pogtracker-min-2.png')}>
-          <ProtoPageDetails/>
+        <ProjectCard img={require('./images/pogtracker-min.png')}>
+          <ProjectDetails
+            title={projectData.pogTracker.title}
+            features={projectData.pogTracker.features}
+            description={projectData.pogTracker.description}
+          />
         </ProjectCard>
 
         <ProjectCard img={require('./images/rocket-cropped.png')} right>
-          <ProtoPageDetails right/>
+          <ProjectDetails
+            title={projectData.rocketGarage.title}
+            features={projectData.rocketGarage.features}
+            description={projectData.rocketGarage.description}
+          />
         </ProjectCard>
       </AppW>
     );
