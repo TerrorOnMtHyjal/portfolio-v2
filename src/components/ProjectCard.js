@@ -6,6 +6,7 @@ const ProjectCardW = styled.div`
   perspective: 1000px;
   display: flex;
   flex-flow: column;
+  align-items: center;
   transform-origin: 0 0;
   transform: translateZ(0) scale(1);
   background: #000;
@@ -49,11 +50,11 @@ const ProjectCardInnerW = styled.div`
 `;
 
 const WebsiteCapture = styled.div`
-  transition: all 1s ease-in-out;
+  transition: all 2s ease-in-out;
   z-index: 1;
   height: auto;
-  transform: ${props => props.viewable ? `rotateY(${props.right ? "-15deg" : "15deg"}) scale(1)` : 'rotateY(0deg) scale(1)'};
-  margin: 2em 0;
+  transform: ${props => props.viewable ? 'rotateX(15deg) scale(1)' : 'rotateY(0deg) scale(1)'};
+  margin: 1.5em 0;
 
   & > img {
     transition: all 2s;

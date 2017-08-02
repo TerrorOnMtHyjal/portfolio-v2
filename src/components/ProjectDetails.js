@@ -35,6 +35,8 @@ const Details = styled.div`
 
 const Features = styled.div`
   display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
 `;
 
 const Feature = styled.p`
@@ -52,7 +54,7 @@ const Description = styled.p`
   padding-top: 2em;
   font-size: 0.5em;
   color: white;
-  text-align: center;
+  text-align: left;
   margin: 0;
 
   @media screen and (min-width: 1150px){

@@ -115,7 +115,7 @@ class TaglineCard extends Component {
 
               <Tagline
                 viewable={this.state.inView}
-                delay="0.5s"
+                delay="1s"
               >
                 <h1>DESIGNING</h1>
                 <h1>digital candy</h1>
@@ -123,7 +123,7 @@ class TaglineCard extends Component {
 
               <Tagline
                 viewable={this.state.inView}
-                delay="1s"
+                delay="2s"
               >
                 <h1>WORKING</h1>
                 <h1>for my future</h1>
