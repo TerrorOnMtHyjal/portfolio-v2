@@ -5,7 +5,7 @@ import './App.css';
 import IntroCard from './components/IntroCard';
 import TaglineCard from './components/TaglineCard';
 import ProjectCard from './components/ProjectCard';
-import ProtoPageCard from './components/ProtoPageCard';
+import ProtoPageDetails from './components/ProtoPageDetails';
 
 const AppW = styled.div`
   height: 100vh;
@@ -26,15 +26,15 @@ class App extends Component {
         <IntroCard />
         <TaglineCard/>
 
-        <ProjectCard img={require('./images/protopage-cropped.png')}>
-          <ProtoPageCard />
+        <ProjectCard img={require('./images/protopage-cropped.png')} right>
+          <ProtoPageDetails/>
         </ProjectCard>
 
-        <ProjectCard img={require('./images/pogtracker-min-2.png')} right>
+        <ProjectCard img={require('./images/pogtracker-min-2.png')}>
           
         </ProjectCard>
 
-        <ProjectCard img={require('./images/rocket-cropped.png')}>
+        <ProjectCard img={require('./images/rocket-cropped.png')} right>
           
         </ProjectCard>
       </AppW>

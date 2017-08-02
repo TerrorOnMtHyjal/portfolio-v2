@@ -14,15 +14,40 @@ const ProjectCardW = styled.div`
   overflow: hidden;
 `;
 
+const ProjectCardInnerW = styled.div`
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  align-items: ${props => props.right ? "flex-start" : "flex-end"};
+  width: 70%;
+  margin: 0 auto;
+  transition: all 1s ease-in;
+  z-index: 2;
+`;
+
 const WebsiteCapture = styled.div`
   position: absolute;
   width: 100%;
   height: 100%;
   top: 0;
-  left: ${props => props.viewable ? "-20%" : 0};
   transition: all 1s ease-in-out;
-  transform: ${props => props.viewable ? 'rotateY(20deg) scale(0.4)' : 'rotateY(0deg) scale(1)'};
   z-index: 1;
+  ${props => props.right 
+    ? 
+      `
+        right: ${props => props.viewable ? "-20%" : 0};
+        transform: ${props => props.viewable ? 'rotateY(-20deg) scale(0.4)' : 'rotateY(0deg) scale(1)'};
+      `
+    :
+      `
+        left: ${props => props.viewable ? "-20%" : 0};
+        transform: ${props => props.viewable ? 'rotateY(20deg) scale(0.4)' : 'rotateY(0deg) scale(1)'};
+      `
+  }
+
+  ${props => props.right ? "left: " : "right: "}${props => props.viewable ? "20%" : 0};
+  transform: ${props => props.viewable ? `rotateY(${props.right ? "-20deg" : "20deg"}) scale(0.4)` : 'rotateY(0deg) scale(1)'};
+
 
   & > img {
     transition: all 2s;
@@ -43,7 +68,6 @@ class ProjectCard extends Component {
   }
 
   handleEnter(){
-    console.log("yo")
     this.setState({
       inView : true
     });
@@ -60,8 +84,10 @@ class ProjectCard extends Component {
       <Waypoint bottomOffset="70%" onEnter={() => this.handleEnter()}>
         <div>
           <ProjectCardW>
-            {this.props.children}
-            <WebsiteCapture viewable={this.state.inView}>
+            <ProjectCardInnerW>
+              {this.props.children}
+            </ProjectCardInnerW>
+            <WebsiteCapture viewable={this.state.inView} right={this.props.right}>
               <img src={this.props.img} alt=""/>
             </WebsiteCapture>
           </ProjectCardW>

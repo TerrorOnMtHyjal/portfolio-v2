@@ -2,17 +2,6 @@ import React, { Component } from 'react';
 import styled from 'styled-components';
 const Waypoint = require('react-waypoint');
 
-const ProtoPageCardW = styled.div`
-  display: flex;
-  flex-flow: column;
-  justify-content: center;
-  align-items: flex-end;
-  width: 70%;
-  margin: 0 auto;
-  transition: all 1s ease-in;
-  z-index: 2;
-`;
-
 const Details = styled.div`
   display: flex;
   flex-flow: column;
@@ -47,7 +36,7 @@ const Description = styled.p`
   width: 40%;
 `;
 
-class ProtoPageCard extends Component {
+class ProtoPageDetails extends Component {
   constructor(props){
     super(props);
 
@@ -72,7 +61,6 @@ class ProtoPageCard extends Component {
 
   render() {
     return (
-      <ProtoPageCardW>
         <Waypoint bottomOffset="30%" onEnter={() => this.handleEnter()}>
           <div>
               <Details>
@@ -87,9 +75,8 @@ class ProtoPageCard extends Component {
               </Details>
           </div>
         </Waypoint>
-      </ProtoPageCardW>
     );
   }
 }
 
-export default ProtoPageCard;
+export default ProtoPageDetails;
