@@ -13,10 +13,9 @@ const ProjectCardW = styled.div`
   overflow: hidden;
   border-bottom: 2px solid silver;
   font-size: 1rem;
-  height: 100vh;
 
   @media screen and (min-width: 1150px){
-    height: 100vh;
+    
   }
 `;
 
