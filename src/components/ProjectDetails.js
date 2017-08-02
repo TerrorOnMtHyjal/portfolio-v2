@@ -3,15 +3,33 @@ import styled from 'styled-components';
 const Waypoint = require('react-waypoint');
 
 const Details = styled.div`
+
   display: flex;
   flex-flow: column;
-  width: 40%;
-  align-items: ${props => props.right ? "flex-end" : "flex-start"};
+  width: 95%;
+  align-items: center;
+  font-size: 2rem;
+
   & > h1 {
     font-family: "Permanent Marker", sans-serif;
+    font-size: 12vw;
     color: #ff00ae;
     margin: 0;
     padding: 0;
+  }
+
+  @media screen and (min-width: 1150px){
+    display: flex;
+    flex-flow: column;
+    width: 40%;
+    align-items: ${props => props.right ? "flex-end" : "flex-start"};
+
+    & > h1 {
+      font-family: "Permanent Marker", sans-serif;
+      color: #ff00ae;
+      margin: 0;
+      padding: 0;
+    }
   }
 `;
 
@@ -21,8 +39,8 @@ const Features = styled.div`
 
 const Feature = styled.p`
   font-family: 'Roboto Slab';
-  font-size: 1.25rem;
-  transition: all 1s ease-out;
+  font-size: 0.5em;
+  transition: opacity 1s ease-out;
   color: white;
   transition-delay: ${props => props.delay};
   opacity: ${props => props.viewable ? 1 : 0};
@@ -31,11 +49,15 @@ const Feature = styled.p`
 `;
 
 const Description = styled.p`
-  font-size: 1.25rem;
+  padding-top: 2em;
+  font-size: 0.5em;
   color: white;
-  text-align: ${props => props.right ? "right" : "left"};
+  text-align: center;
   margin: 0;
-  padding: 0;
+
+  @media screen and (min-width: 1150px){
+    text-align: ${props => props.right ? "right" : "left"};
+  }
 `;
 
 class ProjectDetails extends Component {
