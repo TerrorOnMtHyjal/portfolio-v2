@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
 
+const Waypoint = require('react-waypoint');
+
 const IntroCardW = styled.div`
   transform-origin: 0 0;
   transform: translateZ(-2px) scale(3);
@@ -24,6 +26,8 @@ const Names = styled.div`
   display: flex;
   flex-flow: column;
   align-items: flex-end;
+  transition: all 2s ease-out;
+  opacity: ${props => props.viewable ? 1 : 0};
 
   & > h1, h2 {
     margin: 0;
@@ -46,6 +50,8 @@ const Names = styled.div`
 const Links = styled.div`
   display: flex;
   justify-content: center;
+  transition: all 2s ease-out;
+  opacity: ${props => props.viewable ? 1 : 0};
   margin-top: 10px;
   margin-right: 10px;
   & > a {
@@ -58,22 +64,43 @@ const Links = styled.div`
 `;
 
 class IntroCard extends Component {
+  constructor(props){
+    super(props);
+
+    this.state = {
+      inView : false
+    }
+  }
+
+  handleEnter(){
+    this.setState({
+      inView: true
+    })
+  }
+
   render() {
     return (
       <IntroCardW>
         <IntroCardInner>
-          <Names>
-            <h1>JARED MOHNEY</h1>
-            <h2>Space Wizard</h2>
-          </Names>
-          <Links>
-            <a href="http://www.github.com/dustwise">
-              <img src={require('../images/github-min.png')} alt="Github Link"/>
-            </a>
-            <a href="http://www.linkedin.com/jaredmohney">
-              <img src={require('../images/linkedin-min.png')} alt="LinkedIn Link"/>
-            </a>
-          </Links>
+
+          <Waypoint onEnter={() => this.handleEnter()}>
+            <div>
+              <Names viewable={this.state.inView}>
+                <h1>JARED MOHNEY</h1>
+                <h2>Space Wizard</h2>
+              </Names>
+
+              <Links viewable={this.state.inView}>
+                <a href="http://www.github.com/dustwise">
+                  <img src={require('../images/github-min.png')} alt="Github Link"/>
+                </a>
+                <a href="http://www.linkedin.com/jaredmohney">
+                  <img src={require('../images/linkedin-min.png')} alt="LinkedIn Link"/>
+                </a>
+              </Links>
+            </div>
+          </Waypoint>
+
         </IntroCardInner>
       </IntroCardW>
     );

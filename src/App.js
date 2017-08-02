@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import './App.css';
 
 import IntroCard from './components/IntroCard';
-import TripleCard from './components/TripleCard';
+import TaglineCard from './components/TaglineCard';
 
 const AppW = styled.div`
   height: 100vh;
@@ -22,7 +22,7 @@ class App extends Component {
     return (
       <AppW className="App">
         <IntroCard />
-        <TripleCard/>
+        <TaglineCard/>
       </AppW>
     );
   }
