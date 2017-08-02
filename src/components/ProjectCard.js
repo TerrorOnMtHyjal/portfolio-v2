@@ -3,7 +3,6 @@ import styled from 'styled-components';
 const Waypoint = require('react-waypoint');
 
 const ProjectCardW = styled.div`
-  position: relative;
   perspective: 1000px;
   width: 100%;
   height: 100vh;
@@ -15,9 +14,23 @@ const ProjectCardW = styled.div`
   overflow: hidden;
 `;
 
-const WebsiteCapture = styled.img`
-  transition: all 2s ease-in-out;
-  transform: ${props => props.viewable ? 'rotateY(20deg) translateX(-15%) scale(0.4)' : 'rotateY(0deg) scale(1)'};
+const WebsiteCapture = styled.div`
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: ${props => props.viewable ? "-20%" : 0};
+  transition: all 1s ease-in-out;
+  transform: ${props => props.viewable ? 'rotateY(20deg) scale(0.4)' : 'rotateY(0deg) scale(1)'};
+  z-index: 1;
+
+  & > img {
+    transition: all 2s;
+    position: absolute;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+  }
 `;
 
 class ProjectCard extends Component {
@@ -44,11 +57,13 @@ class ProjectCard extends Component {
 
   render() {
     return (
-      <Waypoint bottomOffset="70%" onEnter={() => this.handleEnter()} onLeave={() => this.handleLeave()}>
+      <Waypoint bottomOffset="70%" onEnter={() => this.handleEnter()}>
         <div>
           <ProjectCardW>
-            {() => React.cloneElement(this.props.children, { viewable : this.state.inView })}
-            <WebsiteCapture src={this.props.img} alt="" viewable={this.state.inView}/>
+            {this.props.children}
+            <WebsiteCapture viewable={this.state.inView}>
+              <img src={this.props.img} alt=""/>
+            </WebsiteCapture>
           </ProjectCardW>
         </div>
       </Waypoint>

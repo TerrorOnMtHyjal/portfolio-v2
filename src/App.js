@@ -26,15 +26,15 @@ class App extends Component {
         <IntroCard />
         <TaglineCard/>
 
-        <ProjectCard img={require('./images/protopage-min.png')}>
+        <ProjectCard img={require('./images/protopage-cropped.png')}>
           <ProtoPageCard />
         </ProjectCard>
 
-        <ProjectCard img={require('./images/pogtracker-min-2.png')}>
+        <ProjectCard img={require('./images/pogtracker-min-2.png')} right>
           
         </ProjectCard>
 
-        <ProjectCard img={require('./images/rocket-garage-min.png')}>
+        <ProjectCard img={require('./images/rocket-cropped.png')}>
           
         </ProjectCard>
       </AppW>
