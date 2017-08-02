@@ -8,7 +8,6 @@ const TaglineCardW = styled.div`
   align-items: center;
   transform-origin: 0 0;
   transform: translateZ(0) scale(1);
-  height: 30vh;
   background: white;
   width: 100%;
 
@@ -18,16 +17,28 @@ const TaglineCardW = styled.div`
 `;
 
 const TaglineCardInner = styled.div`
-  display: flex;
-  align-items: center;
+  width: 90%;
   margin: 0 auto;
-  width: 80%;
-  justify-content: space-between;
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
   font-size: 0.35em;
-  transition: all 2s ease-out;
+  transition: opacity 2s ease-out;
+  padding: 50px 0;
+
+  @media screen and (min-width:840px){
+    flex-flow: row;
+    justify-content: space-between;
+  }
+
+  @media screen and (min-width:950px){
+    width: 80%;
+  }
 `;
 
 const Tagline = styled.div`
+  padding: 50px 0;
   display: flex;
   flex-flow: column;
   align-items: center;
@@ -48,6 +59,22 @@ const Tagline = styled.div`
   & > h1:last-child {
     font-weight: 100;
     letter-spacing: 3px;
+  }
+
+  @media screen and (min-width:550px){
+    flex-flow: row;
+
+    & > h1:first-child {
+      margin-right: 20px;
+    }
+  }
+
+  @media screen and (min-width:840px){
+    flex-flow: column;
+
+    & > h1:first-child {
+      margin-right: 0;
+    }
   }
 `;
 

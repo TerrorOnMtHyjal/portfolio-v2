@@ -36,8 +36,8 @@ const IntroCardInner = styled.div`
     align-items: center;
   }
 
-  @media screen and (min-width: 850px){
-    font-size: 3rem;
+  @media screen and (min-width: 840px){
+    font-size: 2.8rem;
   }
 
   @media screen and (min-width: 1150px){
