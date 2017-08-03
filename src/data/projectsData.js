@@ -8,14 +8,14 @@ const projectsData = {
     image : './images/protopage-cropped.png',
     right: true,
     imagePlacement : `
-      top: -180px;
+      top: -250px;
       left: 0;
     `
   },
   pogTracker : {
     title : "PogTracker",
     features : ["MongoDB", " | ", "React Router 4", " | ", "React",  " | ", "Redux",  " | ", "Twitch API", " | ", "AWS"],
-    description : ` Using the power of Twitch Chat emotes, we provide the top highlights from any broadcast replay.
+    description : ` Using the power of Twitch chat emotes, we provide the top highlights from any broadcast replay.
                     Looking for the best FailFish moments? We got you covered. Subscriber emotes included!
                     All data is stored for future users, delivered to them instantly. The best news? The bigger
                     the stream, the better the results. Never miss a PogChamp moment again.`,
@@ -35,8 +35,8 @@ const projectsData = {
     image : './images/rocket-cropped.png',
     right: true,
     imagePlacement : `
-      top: 0;
-      left: -200px;
+      top: -125px;
+      left: -625px;
     `
   }
 };

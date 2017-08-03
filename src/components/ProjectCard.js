@@ -14,14 +14,13 @@ const ProjectCardW = styled.div`
   font-size: 1rem;
 
   @media screen and (min-width: 1150px){
-
   }
 `;
 
 const ProjectCardInnerW = styled.div`
   display: flex;
   flex-flow: column;
-  margin: 0 auto;
+  margin: 10em auto;
   transition: all 1s ease-in;
   z-index: 2;
 
@@ -54,13 +53,13 @@ const WebsiteCapture = styled.div`
   align-self: flex-start;
   width: 100%;
   height: 100%;
-  //transform: ${props => props.viewable ? 'rotateX(15deg) scale(1)' : 'rotateY(0deg) scale(1)'};
+  transform: ${props => props.viewable ? 'rotateX(15deg) scale(1)' : 'rotateY(0deg) scale(1)'};
 
   & > img {
     position: absolute;
     ${props => props.imagePlacement};
     height: auto;
-    opacity: 0.5;
+    opacity: 0.7;
     transition: all 2s;
     overflow: hidden;
   }
@@ -80,6 +79,10 @@ const WebsiteCapture = styled.div`
     & > img {
       transition: all 2s;
       position: absolute;
+      left: 0;
+      top: 0;
+      right: 0;
+      bottom: 0;
       overflow: hidden;
     }
 

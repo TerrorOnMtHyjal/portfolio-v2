@@ -7,20 +7,12 @@ const Details = styled.div`
   font-size: 2rem;
   width: 100%;
   background-color: rgba(0, 0, 0, 0.9);
-  margin: 6em 0;
+  align-items: center;
 
   @media screen and (min-width: 1150px){
     display: flex;
-    flex-flow: column;
     width: 40%;
-    align-items: ${props => props.right ? "flex-end" : "flex-start"};
-
-    & > h1 {
-      font-family: "Permanent Marker", sans-serif;
-      color: #ff00ae;
-      margin: 0;
-      padding: 0;
-    }
+    height: 100vh;
   }
 `;
 
@@ -28,9 +20,10 @@ const DetailsInnerW = styled.div`
   display: flex;
   flex-flow: column;
   align-items: center;
-  width: 95%;
-  padding: 2em 0;
+  justify-content: center;
+  width: 90%;
   margin: 0 auto;
+  padding: 2em 0;
   
   & > h1 {
     font-family: "Permanent Marker", sans-serif;
@@ -38,6 +31,19 @@ const DetailsInnerW = styled.div`
     color: #ff00ae;
     margin: 0;
     padding: 0;
+  }
+
+  @media screen and (min-width: 940px){
+    & > h1 {
+      font-size: 10vw;
+    }
+  }
+
+  @media screen and (min-width: 1150px){
+    height: 100%;
+    & > h1 {
+      font-size: 6vw;
+    }
   }
 `;
 
@@ -65,8 +71,16 @@ const Description = styled.p`
   text-align: left;
   margin: 0;
 
+  transition: opacity 1s ease-out;
+  transition-delay: 2.5s;
+  opacity: ${props => props.viewable ? 1 : 0};
+
+  @media screen and (min-width: 850px){
+    width: 80%;
+  }
+
   @media screen and (min-width: 1150px){
-    text-align: ${props => props.right ? "right" : "left"};
+    // text-align: ${props => props.right ? "right" : "left"};
   }
 `;
 
@@ -84,6 +98,14 @@ const Buttons = styled.p`
     padding: 0.25em 0.5em;
     background: none;
     color: white;
+  }
+
+  @media screen and (min-width: 480px){
+    width: 60%;
+  }
+
+  @media screen and (min-width: 680px){
+    width: 50%;
   }
 `;
 
@@ -109,7 +131,9 @@ class ProjectDetails extends Component {
       return <Feature
                 key={this.props.title + " " + i} 
                 delay={(startDelay + (delay * i)) + "s"} 
-                viewable={this.state.inView}>&nbsp;{feature}&nbsp;
+                viewable={this.state.inView}
+              >
+              &nbsp;{feature}&nbsp;
             </Feature>
     });
   }
@@ -118,7 +142,7 @@ class ProjectDetails extends Component {
     return (
         <Waypoint bottomOffset="30%" onEnter={() => this.handleEnter()}>
           <div>
-              <Details right={this.props.right}>
+              <Details>
                 <DetailsInnerW>
 
                   <h1>{this.props.title}</h1>
@@ -127,7 +151,7 @@ class ProjectDetails extends Component {
                     {this.generateFeatures(this.props.features)}
                   </Features>
 
-                  <Description right={this.props.right}>
+                  <Description viewable={this.state.inView} right={this.props.right}>
                     {this.props.description}
                   </Description>
 
