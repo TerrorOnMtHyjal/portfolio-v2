@@ -6,6 +6,7 @@ import IntroCard from './components/IntroCard';
 import TaglineCard from './components/TaglineCard';
 import ProjectCard from './components/ProjectCard';
 import ProjectDetails from './components/ProjectDetails';
+import ProjectImage from './components/ProjectImage';
 import projectsData from './data/projectsData';
 
 const AppW = styled.div`
@@ -15,7 +16,7 @@ const AppW = styled.div`
   overflow-x: hidden;
   perspective: 1px;
   perspective-origin: 0 0;
-  font-size: 3rem;
+  font-size: 1rem;
   font-family: 'Roboto Slab', serif;
 `;
 
@@ -29,6 +30,7 @@ class App extends Component {
 
       builtProjects.push(
         <ProjectCard img={require(`${image}`)} right={right} imagePlacement={imagePlacement}>
+          {/*<ProjectImage img={require(`${image}`)}/>*/}
           <ProjectDetails
             title={title}
             features={features}

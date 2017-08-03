@@ -1,7 +1,7 @@
 const projectsData = {
   protoPage : {
     title : "ProtoPage",
-    features : ["Mobile First", " | ", "React",  " | ", "Redux",  " | ", "Google Fonts API"],
+    features : ["Mobile First", "React", "Redux", "Google Fonts API"],
     description : ` Tired of your prototypes lacking pizazz but don't want to spend the time finding compatible fonts? 
                     Quickly randomize through Google fonts on our (totally legit, wireless meat provider) prototype page, 
                     lock in the ones you like and find those pairings in a fraction of the time!`,
