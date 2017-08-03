@@ -1,7 +1,7 @@
 const projectsData = {
   protoPage : {
     title : "ProtoPage",
-    features : ["Mobile First", "React", "Redux", "Google Fonts API"],
+    features : ["MOBILE FIRST", "REACT", "REDUX", "GOOGLE FONTS API"],
     description : ` Tired of your prototypes lacking pizazz but don't want to spend the time finding compatible fonts? 
                     Quickly randomize through Google fonts on our (totally legit, wireless meat provider) prototype page, 
                     lock in the ones you like and find those pairings in a fraction of the time!`,
@@ -12,7 +12,7 @@ const projectsData = {
   },
   pogTracker : {
     title : "PogTracker",
-    features : ["MongoDB", " | ", "React Router 4", " | ", "React",  " | ", "Redux",  " | ", "Twitch API", " | ", "AWS"],
+    features : ["MONGODB", "REACT ROUTER 4", "REACT",  "REDUX",  "TWITCH API", "AWS"],
     description : ` Using the power of Twitch chat emotes, we provide the top highlights from any broadcast replay.
                     Looking for the best FailFish moments? We got you covered. Subscriber emotes included!
                     All data is stored for future users, delivered to them instantly. The best news? The bigger
@@ -23,7 +23,7 @@ const projectsData = {
   },
   rocketGarage : {
     title : "RocketGarage",
-    features : ["PostgreSQL", " | ", "React Router 4", " | ", "React",  " | ", "Redux",  " | ", "Twitch API"],
+    features : ["POSTGRESQL", "REACT ROUTER 4", "REACT",  "REDUX",  "TWITCH API"],
     description : `Rocket Garage is the world's first fully mobile-friendly Rocket League trading platform. Make your trades easier and 
                     more successful, using the garage system and our live frontpage application. Say goodbye to forums and lackluster 
                     trading websites!`,

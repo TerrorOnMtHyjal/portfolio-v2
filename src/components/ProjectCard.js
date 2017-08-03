@@ -94,6 +94,7 @@ const Waypoint = require('react-waypoint');
 // `;
 
 const ProjectCardW = styled.div`
+  position: relative;
   display: flex;
   background-image: url(${props => props.img});
   background-size: cover;
@@ -106,6 +107,23 @@ const ProjectCardW = styled.div`
   transform: translateZ(0) scale(1);
   color: white;
   font-family: 'Roboto Slab', serif;
+  z-index: 1;
+`;
+
+const Container = styled.div`
+  position: relative;
+`;
+
+const Divider = styled.div`
+  position: absolute;
+  bottom: -1em;
+  transform: rotate(-1deg);
+  left: 0;
+  width: 110%;
+  height: 3em;
+  background: linear-gradient(to right, rgba(0,250,206,1) 0%, rgba(255,0,174,1) 100%);
+  content: '';
+  z-index: 300000;
 `;
 
 class ProjectCard extends Component {
@@ -131,21 +149,24 @@ class ProjectCard extends Component {
 
   render() {
     return (
-      <Waypoint bottomOffset="70%" onEnter={() => this.handleEnter()}>
-        <div>
-          <ProjectCardW img={this.props.img}>
-            {this.props.children}
-          </ProjectCardW>
-          {/*<ProjectCardW>
-            <WebsiteCapture viewable={this.state.inView} right={this.props.right} imagePlacement={this.props.imagePlacement} img={this.props.img}>
-              <img src={this.props.img} alt=""/>
-            </WebsiteCapture>
-            <ProjectCardInnerW right={this.props.right}>
+      <Container>
+      <ProjectCardW img={this.props.img}>
+        <Waypoint bottomOffset="70%" onEnter={() => this.handleEnter()}>
+          <div>
               {this.props.children}
-            </ProjectCardInnerW>
-          </ProjectCardW>*/}
-        </div>
-      </Waypoint>
+            {/*<ProjectCardW>
+              <WebsiteCapture viewable={this.state.inView} right={this.props.right} imagePlacement={this.props.imagePlacement} img={this.props.img}>
+                <img src={this.props.img} alt=""/>
+              </WebsiteCapture>
+              <ProjectCardInnerW right={this.props.right}>
+                {this.props.children}
+              </ProjectCardInnerW>
+            </ProjectCardW>*/}
+          </div>
+        </Waypoint>
+      </ProjectCardW>
+      <Divider />
+      </Container>
     );
   }
 }

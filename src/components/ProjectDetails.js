@@ -49,17 +49,23 @@ const Waypoint = require('react-waypoint');
 
 const Features = styled.div`
   display: flex;
-  justify-content: flex-start;
-  align-items: flex-start;
+  position: absolute;
+  right: 0;
+  flex-flow: column;
+  align-items: flex-end;
 `;
 
 const Feature = styled.p`
-  transition: opacity 1s ease-out;
-  color: black;
+  position: relative;
+  transition: right 1s ease-in;
   transition-delay: ${props => props.delay};
-  opacity: ${props => props.viewable ? 1 : 0};
+  right: ${props => props.viewable ? 0 : "-100%"};
   margin: 0;
   padding: 0;
+  font-size: 1em;
+  margin-bottom: 0.25em;
+  padding: 0 1em;
+  background: black;
 `;
 
 // const Description = styled.p`
@@ -114,16 +120,18 @@ const DetailsW = styled.div`
   flex-flow: column;
   justify-content: flex-start;
   background: #ff00ae;
-  padding: 2em 6em 2em 2em;
+  padding: 1em 2em 1em 1em;
   transform: rotate(5deg);
 `;
 
 const Title = styled.h1`
   align-self: flex-start;
   font-family: 'Permanent Marker', sans-serif;
+  font-weight: 700;
   margin: 0;
   padding: 0;
-  font-size: 8vw;
+  font-size: 3em;
+  word-break: normal;
 `;
 
 class ProjectDetails extends Component {
@@ -161,10 +169,10 @@ class ProjectDetails extends Component {
           <div>
               <DetailsW>
                 <Title>{this.props.title}</Title>
-                <Features>
-                  {this.generateFeatures(this.props.features)}
-                </Features>
               </DetailsW>
+              <Features>
+                {this.generateFeatures(this.props.features)}
+              </Features>
               {/*<Details>
                 <DetailsInnerW>
 
