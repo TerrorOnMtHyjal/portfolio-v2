@@ -25,10 +25,10 @@ class App extends Component {
     const builtProjects = [];
 
      for(let project in projects){
-      const { image, right, title, features, description, imagePlacment } = projects[project];
+      const { image, right, title, features, description, imagePlacement } = projects[project];
 
       builtProjects.push(
-        <ProjectCard img={require(`${image}`)} right={right}>
+        <ProjectCard img={require(`${image}`)} right={right} imagePlacement={imagePlacement}>
           <ProjectDetails
             title={title}
             features={features}

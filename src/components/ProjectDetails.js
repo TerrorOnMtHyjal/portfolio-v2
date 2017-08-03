@@ -75,7 +75,7 @@ const Buttons = styled.p`
   justify-content: space-between;
   align-items: center;
   font-size: 0.5em;
-  width: 50%;
+  width: 70%;
   margin-top: 3em;
 
   & > button {

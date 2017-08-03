@@ -54,13 +54,12 @@ const WebsiteCapture = styled.div`
   align-self: flex-start;
   width: 100%;
   height: 100%;
-  // transform: ${props => props.viewable ? 'rotateX(15deg) scale(1)' : 'rotateY(0deg) scale(1)'};
+  //transform: ${props => props.viewable ? 'rotateX(15deg) scale(1)' : 'rotateY(0deg) scale(1)'};
 
   & > img {
     position: absolute;
-    top: -20%;
-    left: -50%;
-    width: 1000%;
+    ${props => props.imagePlacement};
+    height: auto;
     opacity: 0.5;
     transition: all 2s;
     overflow: hidden;
@@ -113,7 +112,7 @@ class ProjectCard extends Component {
       <Waypoint bottomOffset="70%" onEnter={() => this.handleEnter()}>
         <div>
           <ProjectCardW>
-            <WebsiteCapture viewable={this.state.inView} right={this.props.right} placement={this.props.imagePlacement}>
+            <WebsiteCapture viewable={this.state.inView} right={this.props.right} imagePlacement={this.props.imagePlacement}>
               <img src={this.props.img} alt=""/>
             </WebsiteCapture>
             <ProjectCardInnerW right={this.props.right}>
