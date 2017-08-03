@@ -6,10 +6,10 @@ const Details = styled.div`
   display: flex;
   font-size: 2rem;
   width: 100%;
-  background-color: rgba(0, 0, 0, 0.9);
+  background-color: rgba(0, 0, 0, 0.8);
   align-items: center;
 
-  @media screen and (min-width: 1150px){
+  @media screen and (min-width: 1024px){
     display: flex;
     width: 40%;
     height: 100vh;
@@ -39,7 +39,7 @@ const DetailsInnerW = styled.div`
     }
   }
 
-  @media screen and (min-width: 1150px){
+  @media screen and (min-width: 1024px){
     height: 100%;
     & > h1 {
       font-size: 6vw;
@@ -79,7 +79,7 @@ const Description = styled.p`
     width: 80%;
   }
 
-  @media screen and (min-width: 1150px){
+  @media screen and (min-width: 1024px){
     // text-align: ${props => props.right ? "right" : "left"};
   }
 `;
@@ -152,7 +152,7 @@ class ProjectDetails extends Component {
                   </Features>
 
                   <Description viewable={this.state.inView} right={this.props.right}>
-                    {this.props.description}
+                    {/*{this.props.description}*/}
                   </Description>
 
                   <Buttons>
