@@ -116,11 +116,11 @@ class ProjectDetails extends Component {
             <DetailsW>
 
               <Actions>
-                <Button className="fa fa-info-circle" aria-hidden="true"/>
-                <a href={this.props.links.github}>
+                <Button className="fa fa-info-circle" aria-hidden="true" onClick={() => this.props.slide()}/>
+                <a target="_blank" href={this.props.links.github}>
                   <Button className="fa fa-github" aria-hidden="true"/>
                 </a>
-                <a href={this.props.links.external}>
+                <a target="_blank" href={this.props.links.external}>
                   <Button className="fa fa-external-link-square" aria-hidden="true" />
                 </a>
               </Actions>

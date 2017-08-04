@@ -51,6 +51,8 @@ class ProjectCard extends Component {
       flipped: false,
       slid: false
     }
+
+    this.handleSlide = this.handleSlide.bind(this);
   }
 
   handleEnter(){
@@ -84,7 +86,7 @@ class ProjectCard extends Component {
   render() {
     return (
       <Container>
-        <SlidesWrapper slid={this.state.slid} onClick={() => this.handleSlide()} >
+        <SlidesWrapper slid={this.state.slid}>
 
           <ProjectCardW 
           img={this.props.img}
@@ -92,12 +94,12 @@ class ProjectCard extends Component {
           >
             <Waypoint bottomOffset="70%" onEnter={() => this.handleEnter()}>
               <div>
-                  {this.props.children}
+                  {React.Children.map(this.props.children, (child) => React.cloneElement(child, { slide: this.handleSlide }))}
               </div>
             </Waypoint>
           </ProjectCardW>
 
-          <ExtraDetails>
+          <ExtraDetails onClick={() => this.handleSlide()}>
             <h1>YO</h1>
           </ExtraDetails>
 
