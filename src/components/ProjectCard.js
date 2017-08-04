@@ -2,6 +2,20 @@ import React, { Component } from 'react';
 import styled from 'styled-components';
 const Waypoint = require('react-waypoint');
 
+const Container = styled.div`
+  position: relative;
+  height: 100vh;
+  overflow: hidden;
+  border-top: 3px solid #ff00ae;
+`;
+
+const SlidesWrapper = styled.div`
+  position: relative;
+  transition: all 1s ease-in-out;
+  top: ${props => props.slid ? "-100vh" : 0};
+  height: 200vh;
+`;
+
 const ProjectCardW = styled.div`
   display: flex;
   flex-flow: column;
@@ -12,31 +26,21 @@ const ProjectCardW = styled.div`
   background-size: cover;
   background-position: ${props => props.imagePlacement};
 
-  border-top: 3px solid #ff00ae;
-
   font-family: 'Roboto Slab', serif;
   color: white;
 
   transform-origin: 50 50;
-  transform: ${props => props.flipped ? 'rotateY(180deg)' : 'rotateY(0)'};
-  transition: all 1s linear;
-  filter: ${props => props.flipped ? 'invert(100%)' : 'invert(0%)'};
-
   z-index: 1;
 `;
 
-const Container = styled.div`
-  position: relative;
+const ExtraDetails = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: black;
+  color: white;
+  height: 100vh;
 `;
-
-// const Divider = styled.div`
-//   position: absolute;
-//   left: 0;
-//   top: 0;
-//   width: 100%;
-//   height: 5%;
-//   z-index: 10;
-// `;
 
 class ProjectCard extends Component {
   constructor(props){
@@ -44,7 +48,8 @@ class ProjectCard extends Component {
 
     this.state = {
       inView : false,
-      flipped: false
+      flipped: false,
+      slid: false
     }
   }
 
@@ -69,21 +74,34 @@ class ProjectCard extends Component {
     })
   }
 
+  handleSlide(){
+    this.setState({
+      ...this.state,
+      slid: !this.state.slid
+    })
+  }
+
   render() {
     return (
       <Container>
-        <ProjectCardW 
-          img={this.props.img} 
-          flipped={this.state.flipped}
-          imagePlacement={this.props.imagePlacement} 
-          onClick={() => this.invertFlip()}>
-          <Waypoint bottomOffset="70%" onEnter={() => this.handleEnter()}>
-            <div>
-                {this.props.children}
-            </div>
-          </Waypoint>
-        </ProjectCardW>
-        {/*<Divider img={this.props.img} imagePlacement={this.props.imagePlacement}/>*/}
+        <SlidesWrapper slid={this.state.slid} onClick={() => this.handleSlide()} >
+
+          <ProjectCardW 
+          img={this.props.img}
+          imagePlacement={this.props.imagePlacement}
+          >
+            <Waypoint bottomOffset="70%" onEnter={() => this.handleEnter()}>
+              <div>
+                  {this.props.children}
+              </div>
+            </Waypoint>
+          </ProjectCardW>
+
+          <ExtraDetails>
+            <h1>YO</h1>
+          </ExtraDetails>
+
+        </SlidesWrapper>
       </Container>
     );
   }
