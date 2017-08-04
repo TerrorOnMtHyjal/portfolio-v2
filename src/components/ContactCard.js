@@ -29,7 +29,7 @@ const Link = styled.i`
   font-size: 2em;
   color: white;
 
-  & > hover {
+  &:hover {
     color : black;
   }
 `;
