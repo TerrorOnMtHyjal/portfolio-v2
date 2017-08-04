@@ -20,6 +20,20 @@ const AppW = styled.div`
   perspective-origin: 0 0;
   font-size: 1rem;
   font-family: 'Roboto Slab', serif;
+  
+
+  @media screen and (min-width: 480px){
+    font-size: 1.25rem;
+  }
+
+  @media screen and (min-width: 650px){
+    font-size: 1.75rem;
+  }
+
+  @media screen and (min-width: 840px){
+    font-size: 2rem;
+  }
+  
 `;
 
 class App extends Component {
