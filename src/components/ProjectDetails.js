@@ -122,6 +122,7 @@ const DetailsW = styled.div`
   background: #ff00ae;
   padding: 1em 2em 1em 1em;
   transform: rotate(5deg);
+  width: 80vw;
 `;
 
 const Title = styled.h1`
@@ -130,7 +131,7 @@ const Title = styled.h1`
   font-weight: 700;
   margin: 0;
   padding: 0;
-  font-size: 3em;
+  font-size: 12vw;
   word-break: normal;
 `;
 

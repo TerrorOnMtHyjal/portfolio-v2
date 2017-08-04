@@ -101,13 +101,14 @@ const ProjectCardW = styled.div`
   flex-flow: column;
   justify-content: center;
   align-items: flex-end;
-  perspective: 1000px;
   height: 100vh;
-  transform-origin: 0 0;
-  transform: translateZ(0) scale(1);
+  transform-origin: 50 50;
+  transform: ${props => props.flipped ? 'rotateY(180deg)' : 'rotateY(0)'};
+  transition: all 1s linear;
   color: white;
   font-family: 'Roboto Slab', serif;
   z-index: 1;
+  filter: ${props => props.flipped ? 'invert(100%)' : 'invert(0%)'};
 `;
 
 const Container = styled.div`
@@ -117,11 +118,11 @@ const Container = styled.div`
 const Divider = styled.div`
   position: absolute;
   bottom: -1em;
-  transform: rotate(-1deg);
+  transform: rotate(1deg);
   left: 0;
   width: 110%;
-  height: 3em;
-  background: linear-gradient(to right, rgba(0,250,206,1) 0%, rgba(255,0,174,1) 100%);
+  height: 2em;
+  background: #fff;
   content: '';
   z-index: 300000;
 `;
@@ -131,41 +132,51 @@ class ProjectCard extends Component {
     super(props);
 
     this.state = {
-      inView : false
+      inView : false,
+      flipped: false
     }
   }
 
   handleEnter(){
     this.setState({
-      inView : true
+      ...this.state,
+      inView : true,
     });
   }
 
   handleLeave(){
     this.setState({
+      ...this.state,
       inView : false
     });
+  }
+
+  invertFlip(){
+    this.setState({
+      ...this.state,
+      flipped: !this.state.flipped
+    })
   }
 
   render() {
     return (
       <Container>
-      <ProjectCardW img={this.props.img}>
-        <Waypoint bottomOffset="70%" onEnter={() => this.handleEnter()}>
-          <div>
-              {this.props.children}
-            {/*<ProjectCardW>
-              <WebsiteCapture viewable={this.state.inView} right={this.props.right} imagePlacement={this.props.imagePlacement} img={this.props.img}>
-                <img src={this.props.img} alt=""/>
-              </WebsiteCapture>
-              <ProjectCardInnerW right={this.props.right}>
+        <ProjectCardW img={this.props.img} flipped={this.state.flipped} onClick={() => this.invertFlip()}>
+          <Waypoint bottomOffset="70%" onEnter={() => this.handleEnter()}>
+            <div>
                 {this.props.children}
-              </ProjectCardInnerW>
-            </ProjectCardW>*/}
-          </div>
-        </Waypoint>
-      </ProjectCardW>
-      <Divider />
+              {/*<ProjectCardW>
+                <WebsiteCapture viewable={this.state.inView} right={this.props.right} imagePlacement={this.props.imagePlacement} img={this.props.img}>
+                  <img src={this.props.img} alt=""/>
+                </WebsiteCapture>
+                <ProjectCardInnerW right={this.props.right}>
+                  {this.props.children}
+                </ProjectCardInnerW>
+              </ProjectCardW>*/}
+            </div>
+          </Waypoint>
+        </ProjectCardW>
+        <Divider />
       </Container>
     );
   }

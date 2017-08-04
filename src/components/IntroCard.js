@@ -5,7 +5,7 @@ const Waypoint = require('react-waypoint');
 
 const IntroCardW = styled.div`
   transform-origin: 0 0;
-  transform: translateZ(-2px) scale(3);
+  transform: translateZ(-2500px) scale(2);
   display: flex;
   align-items: center;
   justify-content: center;

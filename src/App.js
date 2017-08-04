@@ -14,7 +14,7 @@ const AppW = styled.div`
   width: 100vw;
   overflow-y: auto;
   overflow-x: hidden;
-  perspective: 1px;
+  perspective: 2500px;
   perspective-origin: 0 0;
   font-size: 1rem;
   font-family: 'Roboto Slab', serif;
