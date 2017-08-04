@@ -19,6 +19,7 @@ const TaglineCardW = styled.div`
   @media screen and (min-width: 550px){
     font-size: 1rem;
   }
+  z-index: 4;
 `;
 
 const TaglineCardInner = styled.div`
