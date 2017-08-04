@@ -3,8 +3,6 @@ import styled from 'styled-components';
 
 const ContactCardW = styled.div`
   position: relative;
-  font-family: 'Permanent Marker';
-  font-size: 2em;
   display: flex;
   flex-flow: column;
   justify-content: center;
@@ -12,10 +10,19 @@ const ContactCardW = styled.div`
   color: white;
   background: #ff00ae;
   height: 100vh;
+  font-size: 1.5em;
+  z-index: 3;
 
-  & > h3 {
-    margin: 0;
-    padding: 0;
+  &:before {
+    position: absolute;
+    top: -0.75em;
+    left: -2em;
+    transform: rotate(-5deg);
+    background: #ff00ae;
+    content: '';
+    height: 3em;
+    width: 120%;
+    z-index: 5;
   }
 `;
 
@@ -56,6 +63,7 @@ class ContactCard extends Component {
           <Link className="fa fa fa-github" aria-hidden="true"/>
           <Link className="fa fa fa-linkedin-square" aria-hidden="true"/>
         </Links>
+        {/*<p>LONGMONT, CO</p>*/}
         {/*<Footer>
           <p>Copyright Jared Mohney, 2017</p>
         </Footer>*/}

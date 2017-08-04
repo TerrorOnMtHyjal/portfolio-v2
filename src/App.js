@@ -8,6 +8,7 @@ import ProjectCard from './components/ProjectCard';
 import ProjectDetails from './components/ProjectDetails';
 import ProjectImage from './components/ProjectImage';
 import ContactCard  from './components/ContactCard';
+import InfoCard from './components/InfoCard';
 import projectsData from './data/projectsData';
 
 const AppW = styled.div`
