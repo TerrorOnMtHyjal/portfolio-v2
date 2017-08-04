@@ -7,7 +7,7 @@ const projectsData = {
                     lock in the ones you like and find those pairings in a fraction of the time!`,
     image : './images/protopage-cropped.png',
     right: true,
-    imagePlacement : "0% 10%",
+    imagePlacement : "0%",
     githubLink : ''
   },
   pogTracker : {
@@ -19,7 +19,7 @@ const projectsData = {
                     the stream, the better the results. Never miss a PogChamp moment again.`,
     image : './images/pogtracker-min-2.png',
     right: false,
-    imagePlacement : "69% 10%"
+    imagePlacement : "80%"
   },
   rocketGarage : {
     title : "RocketGarage",
@@ -29,7 +29,7 @@ const projectsData = {
                     trading websites!`,
     image : './images/rocket-cropped.png',
     right: true,
-    imagePlacement : "49.5% 13%"
+    imagePlacement : "49%"
   }
 };
 

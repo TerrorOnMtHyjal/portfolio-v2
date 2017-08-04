@@ -96,19 +96,23 @@ const Waypoint = require('react-waypoint');
 const ProjectCardW = styled.div`
   position: relative;
   display: flex;
-  background-image: url(${props => props.img});
-  background-size: cover;
   flex-flow: column;
   justify-content: center;
   align-items: flex-end;
   height: 100vh;
+  background-image: url(${props => props.img});
+  background-size: cover;
+  background-position: ${props => props.imagePlacement};
+
+  font-family: 'Roboto Slab', serif;
+  color: white;
+
   transform-origin: 50 50;
   transform: ${props => props.flipped ? 'rotateY(180deg)' : 'rotateY(0)'};
   transition: all 1s linear;
-  color: white;
-  font-family: 'Roboto Slab', serif;
-  z-index: 1;
   filter: ${props => props.flipped ? 'invert(100%)' : 'invert(0%)'};
+
+  z-index: 1;
 `;
 
 const Container = styled.div`
@@ -118,13 +122,14 @@ const Container = styled.div`
 const Divider = styled.div`
   position: absolute;
   bottom: -1em;
-  transform: rotate(1deg);
   left: 0;
   width: 110%;
   height: 2em;
   background: #fff;
-  content: '';
-  z-index: 300000;
+
+  transform: rotate(1deg);
+
+  z-index: 10;
 `;
 
 class ProjectCard extends Component {
@@ -161,7 +166,11 @@ class ProjectCard extends Component {
   render() {
     return (
       <Container>
-        <ProjectCardW img={this.props.img} flipped={this.state.flipped} onClick={() => this.invertFlip()}>
+        <ProjectCardW 
+          img={this.props.img} 
+          flipped={this.state.flipped}
+          imagePlacement={this.props.imagePlacement} 
+          onClick={() => this.invertFlip()}>
           <Waypoint bottomOffset="70%" onEnter={() => this.handleEnter()}>
             <div>
                 {this.props.children}
@@ -176,7 +185,7 @@ class ProjectCard extends Component {
             </div>
           </Waypoint>
         </ProjectCardW>
-        <Divider />
+        {/*<Divider />*/}
       </Container>
     );
   }
