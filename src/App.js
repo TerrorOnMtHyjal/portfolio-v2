@@ -7,6 +7,7 @@ import TaglineCard from './components/TaglineCard';
 import ProjectCard from './components/ProjectCard';
 import ProjectDetails from './components/ProjectDetails';
 import ProjectImage from './components/ProjectImage';
+import ContactCard  from './components/ContactCard';
 import projectsData from './data/projectsData';
 
 const AppW = styled.div`
@@ -30,7 +31,6 @@ class App extends Component {
 
       builtProjects.push(
         <ProjectCard img={require(`${image}`)} right={right} imagePlacement={imagePlacement}>
-          {/*<ProjectImage img={require(`${image}`)}/>*/}
           <ProjectDetails
             title={title}
             features={features}
@@ -52,7 +52,7 @@ class App extends Component {
         <IntroCard />
         <TaglineCard/>       
         {this.generateProjects(projectsData)}
-        <IntroCard />
+        <ContactCard/>
       </AppW>
     );
   }
