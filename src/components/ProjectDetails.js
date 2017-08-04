@@ -59,12 +59,25 @@ const Actions = styled.div`
   background: #ff00ae;
   z-index: 2;
 
-   & > i {
-     margin: 0;
-     margin-right: 0.5em;
-     padding: 0;
-     font-size: 2.5em;
-   }
+  & > a {
+    color: black;
+
+    &:hover {
+      color: white;
+    }
+  }
+`;
+
+const Button = styled.i`
+  margin: 0;
+  margin-right: 0.5em;
+  padding: 0;
+  font-size: 2.5em;
+  cursor: pointer;
+
+  &:hover {
+    color: white;
+  }
 `;
 
 class ProjectDetails extends Component {
@@ -100,19 +113,26 @@ class ProjectDetails extends Component {
     return (
         <Waypoint bottomOffset="30%" onEnter={() => this.handleEnter()}>
           <div>
-
             <DetailsW>
+
               <Actions>
-                <i className="fa fa-github" aria-hidden="true"></i>
-                <i className="fa fa-info-circle" aria-hidden="true"></i>
-                <i className="fa fa-external-link-square" aria-hidden="true"></i>
+                <Button className="fa fa-info-circle" aria-hidden="true"/>
+                <a href={this.props.links.github}>
+                  <Button className="fa fa-github" aria-hidden="true"/>
+                </a>
+                <a href={this.props.links.external}>
+                  <Button className="fa fa-external-link-square" aria-hidden="true" />
+                </a>
               </Actions>
+
               <TitleW>
                 <Title>{this.props.title}</Title>
               </TitleW>
+
               <Features>
                 {this.generateFeatures(this.props.features)}
               </Features>
+
             </DetailsW>
           </div>
         </Waypoint>

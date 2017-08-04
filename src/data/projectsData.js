@@ -8,7 +8,10 @@ const projectsData = {
     image : './images/protopage-cropped.png',
     right: true,
     imagePlacement : "0%",
-    githubLink : ''
+    links : {
+      github: 'https://github.com/dustwise/proto-page',
+      external: 'http://protopage.dustwise.com'
+    }
   },
   pogTracker : {
     title : "PogTracker",
@@ -19,7 +22,11 @@ const projectsData = {
                     the stream, the better the results. Never miss a PogChamp moment again.`,
     image : './images/pogtracker-min-2.png',
     right: false,
-    imagePlacement : "80%"
+    imagePlacement : "80%",
+    links : {
+      github: 'https://github.com/dustwise/pogtracker',
+      external: 'http://www.pogtracker.com'
+    }
   },
   rocketGarage : {
     title : "RocketGarage",
@@ -29,7 +36,11 @@ const projectsData = {
                     trading websites!`,
     image : './images/rocket-cropped.png',
     right: true,
-    imagePlacement : "49%"
+    imagePlacement : "49%",
+    links : {
+      github: 'https://github.com/dustwise/Rocket-Garage',
+      external: 'https://github.com/dustwise/Rocket-Garage'
+    }
   }
 };
 
