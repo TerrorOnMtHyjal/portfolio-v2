@@ -47,27 +47,6 @@ const Waypoint = require('react-waypoint');
 //   }
 // `;
 
-const Features = styled.div`
-  display: flex;
-  position: absolute;
-  right: 0;
-  flex-flow: column;
-  align-items: flex-end;
-`;
-
-const Feature = styled.p`
-  position: relative;
-  transition: right 1s ease-in;
-  transition-delay: ${props => props.delay};
-  right: ${props => props.viewable ? 0 : "-100%"};
-  margin: 0;
-  padding: 0;
-  font-size: 1em;
-  margin-bottom: 0.25em;
-  padding: 0 1em;
-  background: black;
-`;
-
 // const Description = styled.p`
 //   padding-top: 2em;
 //   font-size: 0.5em;
@@ -88,51 +67,69 @@ const Feature = styled.p`
 //   }
 // `;
 
-// const Buttons = styled.p`
-//   display: flex;
-//   justify-content: space-between;
-//   align-items: center;
-//   font-size: 0.5em;
-//   width: 70%;
-//   margin-top: 3em;
-
-//   & > button {
-//     border: none;
-//     border-bottom: 1px solid #ff00ae;
-//     padding: 0.25em 0.5em;
-//     background: none;
-//     color: white;
-//   }
-
-//   @media screen and (min-width: 480px){
-//     width: 60%;
-//   }
-
-//   @media screen and (min-width: 680px){
-//     width: 50%;
-//   }
-// `;
-
 const DetailsW = styled.div`
+  display: flex;
+  flex-flow: column;
+  align-items: flex-end;
+  justify-content: center;
+`;
+
+const TitleW = styled.div`
   position: relative;
   right: -1em;
   display: flex;
   flex-flow: column;
-  justify-content: flex-start;
   background: #ff00ae;
-  padding: 1em 2em 1em 1em;
+  padding: 0.5em 2em 0.5em 0.5em;
   transform: rotate(5deg);
-  width: 80vw;
 `;
 
 const Title = styled.h1`
-  align-self: flex-start;
   font-family: 'Permanent Marker', sans-serif;
   font-weight: 700;
   margin: 0;
   padding: 0;
-  font-size: 12vw;
+  font-size: 3em;
   word-break: normal;
+`;
+
+const Features = styled.div`
+  display: flex;
+  flex-flow: column;
+  align-items: flex-end;
+`;
+
+const Feature = styled.p`
+  position: relative;
+  transition: right 1s ease-in;
+  transition-delay: ${props => props.delay};
+  right: ${props => props.viewable ? 0 : "-100%"};
+  margin: 0;
+  padding: 0;
+  font-size: 1em;
+  margin-bottom: 0.25em;
+  padding: 0 0.5em;
+  background: black;
+`;
+
+const Actions = styled.div`
+  position: relative;
+  top: 0.75em;
+  right: -1em;
+  transform: rotate(5deg);
+  padding: 0.25em 0.5em 0em 0.5em;
+  justify-content: space-between;
+  display: flex;
+  color: black;
+  background: #ff00ae;
+  z-index: 2;
+
+   & > i {
+     margin: 0;
+     margin-right: 0.5em;
+     padding: 0;
+     font-size: 2.5em;
+   }
 `;
 
 class ProjectDetails extends Component {
@@ -168,32 +165,20 @@ class ProjectDetails extends Component {
     return (
         <Waypoint bottomOffset="30%" onEnter={() => this.handleEnter()}>
           <div>
-              <DetailsW>
+
+            <DetailsW>
+              <Actions>
+                <i className="fa fa-github" aria-hidden="true"></i>
+                <i className="fa fa-info-circle" aria-hidden="true"></i>
+                <i className="fa fa-external-link-square" aria-hidden="true"></i>
+              </Actions>
+              <TitleW>
                 <Title>{this.props.title}</Title>
-              </DetailsW>
+              </TitleW>
               <Features>
                 {this.generateFeatures(this.props.features)}
               </Features>
-              {/*<Details>
-                <DetailsInnerW>
-
-                  <h1>{this.props.title}</h1>
-
-                  <Features>
-                    {this.generateFeatures(this.props.features)}
-                  </Features>
-
-                  <Description viewable={this.state.inView} right={this.props.right}>
-                    {this.props.description}
-                  </Description>
-
-                  <Buttons>
-                    <button>GITHUB</button>
-                    <button>TRY IT</button>
-                  </Buttons>
-
-                </DetailsInnerW>
-              </Details>*/}
+            </DetailsW>
           </div>
         </Waypoint>
     );
