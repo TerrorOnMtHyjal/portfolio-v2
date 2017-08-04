@@ -7,6 +7,7 @@ const Container = styled.div`
   height: 100vh;
   overflow: hidden;
   border-top: 3px solid #ff00ae;
+  z-index: 2;
 `;
 
 const SlidesWrapper = styled.div`
@@ -30,7 +31,7 @@ const ProjectCardW = styled.div`
   color: white;
 
   transform-origin: 50 50;
-  z-index: 1;
+  z-index: 3;
 `;
 
 const ExtraDetails = styled.div`

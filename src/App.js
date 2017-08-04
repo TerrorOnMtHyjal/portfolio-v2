@@ -52,6 +52,7 @@ class App extends Component {
         <IntroCard />
         <TaglineCard/>       
         {this.generateProjects(projectsData)}
+        <IntroCard />
       </AppW>
     );
   }

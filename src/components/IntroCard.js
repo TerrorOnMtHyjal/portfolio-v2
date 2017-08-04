@@ -5,12 +5,13 @@ const Waypoint = require('react-waypoint');
 
 const IntroCardW = styled.div`
   transform-origin: 0 0;
-  transform: translateZ(-2500px) scale(2);
+  transform: translateZ(-1px) scale(1);
   display: flex;
   align-items: center;
   justify-content: center;
   height: 100vh;
   background: linear-gradient(to right, rgba(43, 192, 228, 0.5), rgba(234, 236, 198, 0.5));
+  z-index: 1;
 `;
 
 const IntroCardInner = styled.div`
