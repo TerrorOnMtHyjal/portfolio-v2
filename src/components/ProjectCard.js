@@ -8,6 +8,7 @@ const Container = styled.div`
   overflow: hidden;
   border-top: 3px solid #ff00ae;
   z-index: 2;
+  background: white;
 `;
 
 const SlidesWrapper = styled.div`
@@ -18,6 +19,7 @@ const SlidesWrapper = styled.div`
 `;
 
 const ProjectCardW = styled.div`
+  position: relative;
   display: flex;
   flex-flow: column;
   justify-content: center;
@@ -32,6 +34,15 @@ const ProjectCardW = styled.div`
 
   transform-origin: 50 50;
   z-index: 3;
+
+  @media screen and (min-width: 1024px){
+    background-image: none;
+    background: #1b1b1b;
+    width: 80%;
+    margin: 0 auto;
+    overflow: hidden;
+  }
+
 `;
 
 const ExtraDetails = styled.div`
@@ -41,6 +52,18 @@ const ExtraDetails = styled.div`
   background-color: black;
   color: white;
   height: 100vh;
+`;
+
+const Image = styled.div`
+  position: absolute;
+  left: 7.5%;
+  top: 30%;
+  max-width: 40%;
+  display: none;
+
+  @media screen and (min-width: 1024px){
+    display: inline;
+  }
 `;
 
 class ProjectCard extends Component {
@@ -95,6 +118,9 @@ class ProjectCard extends Component {
           >
             <Waypoint bottomOffset="70%" onEnter={() => this.handleEnter()}>
               <div>
+                {/*<Image>
+                  <img src={this.props.img} alt=""/>
+                </Image>*/}
                   {React.Children.map(this.props.children, (child) => React.cloneElement(child, { slide: this.handleSlide }))}
               </div>
             </Waypoint>
