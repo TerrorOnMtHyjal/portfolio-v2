@@ -4,7 +4,7 @@ import './App.css';
 
 import IntroCard from './components/IntroCard';
 import TaglineCard from './components/TaglineCard';
-import ProjectCard from './components/ProjectCard';
+import ProjectCard2 from './components/ProjectCard2';
 import ProjectDetails from './components/ProjectDetails';
 import ProjectImage from './components/ProjectImage';
 import ContactCard  from './components/ContactCard';
@@ -47,11 +47,6 @@ const AppW = styled.div`
 const ProjectsWrapper = styled.div`
   display: flex;
   flex-flow: column;
-  background-color: yellow;
-
-  @media screen and (min-width: 1024px){
-    flex-flow: row;
-  }
 `;
 
 class App extends Component {
@@ -63,7 +58,7 @@ class App extends Component {
       const { image, right, title, features, description, imagePlacement, links } = projects[project];
 
       builtProjects.push(
-          <ProjectCard img={require(`${image}`)} right={right} imagePlacement={imagePlacement}>
+          <ProjectCard2 img={require(`${image}`)} right={right} imagePlacement={imagePlacement}>
             <ProjectDetails
               title={title}
               features={features}
@@ -72,7 +67,7 @@ class App extends Component {
               links={links}
             >
             </ProjectDetails>
-          </ProjectCard>
+          </ProjectCard2>
       )
     }
 
