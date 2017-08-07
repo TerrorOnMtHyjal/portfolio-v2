@@ -6,11 +6,12 @@ const MediaQuery = require('react-responsive');
 const Container = styled.div`
   display: flex;
   position: relative;
-  height: 100vh;
+  height: 75vh;
   overflow: hidden;
   border-top: 3px solid #ff00ae;
   z-index: 2;
-  background: #1d1d1d;
+  background-image: url("https://www.transparenttextures.com/patterns/axiom-pattern.png");
+  background-color: #1d1d1d;
 
   @media screen and (min-width: 1024px){
     display: flex;
@@ -18,15 +19,16 @@ const Container = styled.div`
     width: 100%;
     justify-content: center;
     align-items: center;
+    border-top: none;
   }
 `;
 
 const SlidesWrapper = styled.div`
   position: relative;
   transition: all 1s ease-in-out;
-  top: ${props => props.slid ? "-100vh" : 0};
+  top: ${props => props.slid ? "-75vh" : 0};
   left: 0;
-  height: 200vh;
+  height: 150vh;
   width: 100%;
 
   @media screen and (min-width: 1024px){
@@ -41,7 +43,7 @@ const ProjectCardW = styled.div`
   display: flex;
   flex-flow: column;
   justify-content: center;
-  height: 100vh;
+  height: 75vh;
   width: 100%;
 
   font-family: 'Roboto Slab', serif;
@@ -51,7 +53,7 @@ const ProjectCardW = styled.div`
     flex-flow: row;
     align-items: center;
     justify-content: center;
-    height: 66%;
+    height: 100%;
     width: 100%;
   }
 `;
@@ -71,7 +73,7 @@ const ImageW = styled.div`
   top: 0;
   left: 0;
   width: 100vw;
-  height: 100vh;
+  height: 75vh;
   background-image: url(${props => props.img});
   background-size: cover;
   background-position: ${props => props.imagePlacement};
@@ -79,13 +81,16 @@ const ImageW = styled.div`
 
   @media screen and (min-width: 1024px){
     position: relative;
-    width: 960px;
-    height: 540px;
+    width: 800px;
+    height: 450px;
     z-index: 3;
     background-image: none;
+    perspective: 125px;
+    perspective-origin: 0 0;
 
     & > img {
       position: absolute;
+      transform: rotateY(-2deg);
       top: 0;
       left: 0;
       right: 0;
