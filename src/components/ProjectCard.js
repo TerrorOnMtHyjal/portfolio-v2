@@ -10,7 +10,7 @@ const Container = styled.div`
   border-top: 3px solid #ff00ae;
   z-index: 2;
   background-color: #1d1d1d;
-  background-image: url("https://www.transparenttextures.com/patterns/axiom-pattern.png");
+  background-image: url("https://www.transparenttextures.com/patterns/cubes.png");
 
   @media screen and (min-width: 1024px){
     display: flex;
