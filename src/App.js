@@ -23,7 +23,7 @@ const AppW = styled.div`
   
 
   @media screen and (min-width: 480px){
-    font-size: 1.25rem;
+    font-size: 1.5rem;
   }
 
   @media screen and (min-width: 650px){
@@ -33,7 +33,26 @@ const AppW = styled.div`
   @media screen and (min-width: 840px){
     font-size: 2rem;
   }
+
+  @media screen and (min-width: 1024px){
+    font-size: 1.15rem;
+  }
+
+  @media screen and (min-width: 1650px){
+    font-size: 1.5rem;
+  }
   
+`;
+
+const ProjectsWrapper = styled.div`
+  display: flex;
+  flex-flow: column;
+  width: 100%;
+  background-color: yellow;
+
+  @media screen and (min-width: 1024px){
+    flex-flow: row;
+  }
 `;
 
 class App extends Component {
@@ -45,16 +64,16 @@ class App extends Component {
       const { image, right, title, features, description, imagePlacement, links } = projects[project];
 
       builtProjects.push(
-        <ProjectCard img={require(`${image}`)} right={right} imagePlacement={imagePlacement}>
-          <ProjectDetails
-            title={title}
-            features={features}
-            description={description}
-            right={right}
-            links={links}
-          >
-          </ProjectDetails>
-        </ProjectCard>
+          <ProjectCard img={require(`${image}`)} right={right} imagePlacement={imagePlacement}>
+            <ProjectDetails
+              title={title}
+              features={features}
+              description={description}
+              right={right}
+              links={links}
+            >
+            </ProjectDetails>
+          </ProjectCard>
       )
     }
 
@@ -65,8 +84,10 @@ class App extends Component {
     return (
       <AppW className="App">
         <IntroCard />
-        <TaglineCard/>       
-        {this.generateProjects(projectsData)}
+        <TaglineCard/>
+        <ProjectsWrapper>  
+          {this.generateProjects(projectsData)}
+        </ProjectsWrapper>   
         <ContactCard/>
       </AppW>
     );

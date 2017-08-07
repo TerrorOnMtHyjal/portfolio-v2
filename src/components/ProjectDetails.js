@@ -7,6 +7,7 @@ const DetailsW = styled.div`
   flex-flow: column;
   align-items: flex-end;
   justify-content: center;
+  z-index: 2;
 `;
 
 const TitleW = styled.div`
@@ -17,6 +18,7 @@ const TitleW = styled.div`
   background: #ff00ae;
   padding: 0.5em 2em 0.5em 0.5em;
   transform: rotate(5deg);
+  z-index: 2;
 `;
 
 const Title = styled.h1`
@@ -32,6 +34,7 @@ const Features = styled.div`
   display: flex;
   flex-flow: column;
   align-items: flex-end;
+  z-index: 2;
 `;
 
 const Feature = styled.p`
@@ -57,7 +60,7 @@ const Actions = styled.div`
   display: flex;
   color: black;
   background: #ff00ae;
-  z-index: 2;
+  z-index: 3;
 
   & > a {
     color: black;

@@ -8,7 +8,14 @@ const Container = styled.div`
   overflow: hidden;
   border-top: 3px solid #ff00ae;
   z-index: 2;
-  background: white;
+  background: black;
+
+  @media screen and (min-width: 1024px){
+    background-image: none;
+    overflow: hidden;
+    flex-basis: 0;
+    flex-grow: 1;
+  }
 `;
 
 const SlidesWrapper = styled.div`
@@ -25,24 +32,9 @@ const ProjectCardW = styled.div`
   justify-content: center;
   align-items: flex-end;
   height: 100vh;
-  background-image: url(${props => props.img});
-  background-size: cover;
-  background-position: ${props => props.imagePlacement};
 
   font-family: 'Roboto Slab', serif;
   color: white;
-
-  transform-origin: 50 50;
-  z-index: 3;
-
-  @media screen and (min-width: 1024px){
-    background-image: none;
-    background: #1b1b1b;
-    width: 80%;
-    margin: 0 auto;
-    overflow: hidden;
-  }
-
 `;
 
 const ExtraDetails = styled.div`
@@ -56,13 +48,20 @@ const ExtraDetails = styled.div`
 
 const Image = styled.div`
   position: absolute;
-  left: 7.5%;
-  top: 30%;
-  max-width: 40%;
-  display: none;
+  top: 0;
+  left: 0;
+  background-image: url(${props => props.img});
+  background-size: cover;
+  background-position: ${props => props.imagePlacement};
+  transition: all 0.25s ease-in-out;
+  width: 100%;
+  height: 100vh;
+  opacity: 0.5;
+  z-index: 1;
 
-  @media screen and (min-width: 1024px){
-    display: inline;
+  &:hover{
+    transform: scale(1.1);
+    opacity: 1;
   }
 `;
 
@@ -111,25 +110,21 @@ class ProjectCard extends Component {
     return (
       <Container>
         <SlidesWrapper slid={this.state.slid}>
-
           <ProjectCardW 
           img={this.props.img}
           imagePlacement={this.props.imagePlacement}
           >
             <Waypoint bottomOffset="70%" onEnter={() => this.handleEnter()}>
               <div>
-                {/*<Image>
-                  <img src={this.props.img} alt=""/>
-                </Image>*/}
                   {React.Children.map(this.props.children, (child) => React.cloneElement(child, { slide: this.handleSlide }))}
+                  
               </div>
             </Waypoint>
+            <Image img={this.props.img} imagePlacement={this.props.imagePlacement}/>
           </ProjectCardW>
-
           <ExtraDetails onClick={() => this.handleSlide()}>
             <h1>YO</h1>
           </ExtraDetails>
-
         </SlidesWrapper>
       </Container>
     );
