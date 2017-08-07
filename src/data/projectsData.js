@@ -1,18 +1,4 @@
 const projectsData = {
-  protoPage : {
-    title : "ProtoPage",
-    features : ["MOBILE FIRST", "REACT", "REDUX", "GOOGLE FONTS API"],
-    description : ` Tired of your prototypes lacking pizazz but don't want to spend the time finding compatible fonts? 
-                    Quickly randomize through Google fonts on our (totally legit, wireless meat provider) prototype page, 
-                    lock in the ones you like and find those pairings in a fraction of the time!`,
-    image : './images/protopage-cropped.png',
-    right: true,
-    imagePlacement : "0%",
-    links : {
-      github: 'https://github.com/dustwise/proto-page',
-      external: 'http://protopage.dustwise.com'
-    }
-  },
   pogTracker : {
     title : "PogTracker",
     features : ["MONGODB", "REACT ROUTER 4", "REACT",  "REDUX",  "TWITCH API", "AWS"],
@@ -26,6 +12,20 @@ const projectsData = {
     links : {
       github: 'https://github.com/dustwise/pogtracker',
       external: 'http://www.pogtracker.com'
+    }
+  },
+  protoPage : {
+    title : "ProtoPage",
+    features : ["MOBILE FIRST", "REACT", "REDUX", "GOOGLE FONTS API"],
+    description : ` Tired of your prototypes lacking pizazz but don't want to spend the time finding compatible fonts? 
+                    Quickly randomize through Google fonts on our (totally legit, wireless meat provider) prototype page, 
+                    lock in the ones you like and find those pairings in a fraction of the time!`,
+    image : './images/protopage-cropped.png',
+    right: true,
+    imagePlacement : "0%",
+    links : {
+      github: 'https://github.com/dustwise/proto-page',
+      external: 'http://protopage.dustwise.com'
     }
   },
   rocketGarage : {
