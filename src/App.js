@@ -35,7 +35,7 @@ const AppW = styled.div`
   }
 
   @media screen and (min-width: 1024px){
-    font-size: 1.15rem;
+    font-size: 1rem;
   }
 
   @media screen and (min-width: 1650px){
@@ -47,7 +47,6 @@ const AppW = styled.div`
 const ProjectsWrapper = styled.div`
   display: flex;
   flex-flow: column;
-  width: 100%;
   background-color: yellow;
 
   @media screen and (min-width: 1024px){
