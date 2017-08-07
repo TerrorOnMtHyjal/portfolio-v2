@@ -41,7 +41,6 @@ const ProjectCardW = styled.div`
   display: flex;
   flex-flow: column;
   justify-content: center;
-  align-items: flex-end;
   height: 100vh;
   width: 100%;
 
@@ -67,23 +66,33 @@ const ExtraDetails = styled.div`
 `;
 
 const ImageW = styled.div`
-  position: relative;
+  position: absolute;
   z-index: 1;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-image: url(${props => props.img});
+  background-size: cover;
+  background-position: ${props => props.imagePlacement};
 
-  & > img {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    width: 100%;
-    height: 100%;
-  }
 
   @media screen and (min-width: 1024px){
+    position: relative;
     width: 960px;
     height: 540px;
     z-index: 3;
+    background-image: none;
+
+    & > img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      width: 100%;
+      height: 100%;
+    }
   }
 `;
 
@@ -117,6 +126,7 @@ class ProjectCard extends Component {
     return (
       <Container>
         <SlidesWrapper slid={this.state.slid}>
+
           <ProjectCardW 
           img={this.props.img}
           imagePlacement={this.props.imagePlacement}
@@ -126,15 +136,22 @@ class ProjectCard extends Component {
                 {React.Children.map(this.props.children, (child) => React.cloneElement(child, { slide: this.handleSlide }))}   
               </div>
             </Waypoint>
-            <ImageW>
-              <img src={this.props.img} alt="Project Image"/>
+
+            <ImageW imagePlacement={this.props.imagePlacement} img={this.props.img}>
+              <MediaQuery query='(min-width: 1024px)'>
+                <img src={this.props.img} alt="Project Image"/>
+              </MediaQuery>
             </ImageW>
           </ProjectCardW>
+
           <MediaQuery query='(max-width: 1024px)'>
+
             <ExtraDetails onClick={() => this.handleSlide()}>
               <h1>YO</h1>
             </ExtraDetails>
+
           </MediaQuery>
+
         </SlidesWrapper>
       </Container>
     );
