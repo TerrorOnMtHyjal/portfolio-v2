@@ -90,7 +90,7 @@ const ImageW = styled.div`
 
     & > img {
       position: absolute;
-      transform: rotateY(-2deg);
+      // transform: rotateY(-2deg);
       top: 0;
       left: 0;
       right: 0;
