@@ -55,13 +55,17 @@ const Image = styled.div`
   background-position: ${props => props.imagePlacement};
   transition: all 0.25s ease-in-out;
   width: 100%;
-  height: 100vh;
   opacity: 0.5;
   z-index: 1;
 
   &:hover{
     transform: scale(1.1);
     opacity: 1;
+  }
+
+  @media screen and (min-width: 1024px){
+    position: static;
+    height: 50%;
   }
 `;
 
