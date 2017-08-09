@@ -39,7 +39,7 @@ const AppW = styled.div`
   }
 
   @media screen and (min-width: 1650px){
-    font-size: 1.5rem;
+    font-size: 1.75rem;
   }
   
 `;
@@ -47,6 +47,9 @@ const AppW = styled.div`
 const ProjectsWrapper = styled.div`
   display: flex;
   flex-flow: column;
+  background-color: #1d1d1d;
+  background-image: url("https://www.transparenttextures.com/patterns/axiom-pattern.png");
+  transform: translateZ(0) scale(1);
 `;
 
 class App extends Component {

@@ -6,7 +6,7 @@ const projectsData = {
                     Looking for the best FailFish moments? We got you covered. Subscriber emotes included!
                     All data is stored for future users, delivered to them instantly. The best news? The bigger
                     the stream, the better the results. Never miss a PogChamp moment again.`,
-    image : './images/pogtracker-min-2.png',
+    image : './images/pogtracker-2.png',
     right: false,
     imagePlacement : "80%",
     links : {
@@ -34,7 +34,7 @@ const projectsData = {
     description : `Rocket Garage is the world's first fully mobile-friendly Rocket League trading platform. Make your trades easier and 
                     more successful, using the garage system and our live frontpage application. Say goodbye to forums and lackluster 
                     trading websites!`,
-    image : './images/rocket-cropped.png',
+    image : './images/rocket-garage-cropped-2.png',
     right: true,
     imagePlacement : "49%",
     links : {

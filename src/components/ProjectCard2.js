@@ -10,13 +10,10 @@ const Container = styled.div`
   overflow: hidden;
   border-top: 3px solid #ff00ae;
   z-index: 2;
-  background-image: url("https://www.transparenttextures.com/patterns/axiom-pattern.png");
-  background-color: #1d1d1d;
 
   @media screen and (min-width: 1024px){
     display: flex;
     height: 75vh;
-    width: 100%;
     justify-content: center;
     align-items: center;
     border-top: none;
@@ -34,7 +31,6 @@ const SlidesWrapper = styled.div`
   @media screen and (min-width: 1024px){
     align-items: center;
     height: 75vh;
-    width: 100%;
   }
 `;
 
@@ -53,8 +49,6 @@ const ProjectCardW = styled.div`
     flex-flow: row;
     align-items: center;
     justify-content: center;
-    height: 100%;
-    width: 100%;
   }
 `;
 
