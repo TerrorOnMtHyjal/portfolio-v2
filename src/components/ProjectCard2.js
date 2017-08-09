@@ -48,7 +48,9 @@ const ProjectCardW = styled.div`
   @media screen and (min-width: 1024px){
     flex-flow: row;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-end;
+    margin-right: 15%;
+    width: auto;
   }
 `;
 
