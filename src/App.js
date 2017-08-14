@@ -47,7 +47,7 @@ const AppW = styled.div`
 const ProjectsWrapper = styled.div`
   display: flex;
   flex-flow: column;
-  background-color: #1d1d1d;
+  background-color: #101010;
   background-image: url("https://www.transparenttextures.com/patterns/axiom-pattern.png");
   transform: translateZ(0) scale(1);
 `;

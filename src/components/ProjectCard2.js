@@ -49,18 +49,9 @@ const ProjectCardW = styled.div`
     flex-flow: row;
     align-items: center;
     justify-content: flex-end;
-    margin-right: 15%;
     width: auto;
+    margin-right: 20%;
   }
-`;
-
-const ExtraDetails = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: black;
-  color: white;
-  height: 100vh;
 `;
 
 const ImageW = styled.div`
@@ -93,7 +84,26 @@ const ImageW = styled.div`
       bottom: 0;
       width: 100%;
       height: 100%;
+      z-index: 2;
     }
+  }
+`;
+
+const ExtraDetails = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: black;
+  color: white;
+  height: 75vh;
+
+  @media screen and (min-width: 1024px){
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 10%;
+    height: 10%;
+    z-index: 3;
   }
 `;
 
@@ -131,7 +141,7 @@ class ProjectCard extends Component {
           <ProjectCardW 
           img={this.props.img}
           imagePlacement={this.props.imagePlacement}
-          >
+          > 
             <Waypoint bottomOffset="70%" onEnter={() => this.handleEnter()}>
               <div>
                 {React.Children.map(this.props.children, (child) => React.cloneElement(child, { slide: this.handleSlide }))}   
@@ -140,11 +150,23 @@ class ProjectCard extends Component {
 
             <ImageW imagePlacement={this.props.imagePlacement} img={this.props.img}>
               <MediaQuery query='(min-width: 1024px)'>
-                <img src={this.props.img} alt="Project Image"/>
+                <ExtraDetails>
+                  {/*<ul>
+                    <li>All processed replay data saved via MongoDB for future queries</li>
+                    <li>Hosted via AWS utilizing Dokku</li>
+                    <li>Features subscriber emotes for partnered channels</li>
+                  </ul>
+                  <p>
+                    Twitch chat emote usage provides the top highlights from any broadcast replay.
+                    The bigger the stream, the better the results. Never miss a PogChamp moment again.
+                  </p>
+                  <p>hello</p>*/}
+                  <p>HELLO</p>
+                </ExtraDetails>
+                <img src={this.props.img}/>
               </MediaQuery>
             </ImageW>
           </ProjectCardW>
-
           <MediaQuery query='(max-width: 1024px)'>
 
             <ExtraDetails onClick={() => this.handleSlide()}>
