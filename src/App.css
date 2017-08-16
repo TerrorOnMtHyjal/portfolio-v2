@@ -4,9 +4,24 @@
 .react-codemirror2 {
   width: 100%;
 }
+
 .CodeMirror {
   height: 100% !important;
   width: 100% !important;
+}
+
+.CodeMirror .cm-url{
+  color: #00face;
+  text-decoration: underline;
+  font-style: italic;
+  cursor: pointer;
+  transition: all 0.25s ease-in-out;
+  font-size: 1em;
+}
+
+.CodeMirror .cm-url:hover{
+  color: #ff00ae;
+  font-size: 1.1em;
 }
 
 .App-logo {
