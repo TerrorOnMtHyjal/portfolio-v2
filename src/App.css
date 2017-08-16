@@ -25,6 +25,35 @@
 }
 
 .App-logo {
-  animation: App-logo-spin infinite 20s linear;
+  animation: App-logo-spin infinite 2000ms linear;
   height: 80px;
 }
+
+.glitch-appear {
+  opacity: 1;
+}
+
+.glitch-appear.glitch-appear-active {
+  opacity: 1;
+  animation-duration: 2000ms;
+  animation-name: glitchEnter;
+}
+
+@keyframes glitchEnter {
+  from {
+    transform: scale(2);
+  }
+
+  to {
+    transform: scale(1);
+  }
+}
+
+/*.fade-exit {
+  opacity: 1;
+}
+
+.fade-exit.fade-exit-active {
+  opacity: 0.01;
+  transition: opacity 300ms ease-in;
+}*/
