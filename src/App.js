@@ -1,22 +1,25 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
-import CodeMirror from 'react-codemirror2';
-import Editor from './components/Editor';
 import Transition from 'react-transition-group/Transition';
 import CSSTransition from 'react-transition-group/CSSTransition';
+
+import ProjectsTitle from './components/ProjectsTitle';
+import CodeMirror from 'react-codemirror2';
+import Editor from './components/Editor';
 
 import './App.css';
 
 const CodeMirrorW = styled.div`
+  position: relative;
   display: flex;
   width: 100vw;
-  height: 100vh;
+  overflow: hidden;
 `;
 
 const Glitch = ({ children, ...props }) => (
   <CSSTransition
     {...props}
-    timeout={2000}
+    timeout={3000}
     classNames="glitch"
     appear={true}
   >
@@ -24,36 +27,9 @@ const Glitch = ({ children, ...props }) => (
   </CSSTransition>
 );
 
-const duration = 2000;
-
-const defaultStyle = {
-  transition: `filter ${duration}ms ease-in-out`,
-  filter: 'invert(100%)',
-}
-
-const transitionStyles = {
-  entering: { filter: 'invert(0)' },
-  entered:  { filter: 'invert(0)' },
-};
-
-const Fade = ({ in: inProp }) => (
-  <Transition in={inProp} timeout={duration} appear={true}>
-    {(state) => (
-      <div style={{
-        ...defaultStyle,
-        ...transitionStyles[state]
-      }}>
-        <CodeMirrorW>
-          <Editor />
-        </CodeMirrorW>
-      </div>
-    )}
-  </Transition>
-);
-
-
 const AppW = styled.div`
-
+  background: #ffd513;
+  height: 100vh;
 `;
 
 class App extends Component {
@@ -64,15 +40,22 @@ class App extends Component {
     this.state = {
       in: true
     }
+  }
 
+  handleEnd(){
+    console.log("done")
   }
 
   render() {
     return (
       <AppW className="App">
-        <Glitch in={this.state.in}>
-          <p>hello</p>
-        </Glitch>
+        <ProjectsTitle/>
+          <CodeMirrorW>
+            <Glitch in={this.state.in}>
+              <Editor />
+            </Glitch>
+          </CodeMirrorW>
+        <ProjectsTitle/>
       </AppW>
     );
   }

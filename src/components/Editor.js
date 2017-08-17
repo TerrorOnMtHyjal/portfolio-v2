@@ -14,6 +14,9 @@ require('codemirror/addon/fold/markdown-fold.js');
 require('codemirror/addon/fold/indent-fold.js');
 require('codemirror/addon/fold/brace-fold.js');
 
+require('code-mirror-themes/themes/chanfle.css');
+require('../styles/infoEditor.css');
+
 class Editor extends Component {
 
   componentDidMount(){
@@ -38,11 +41,8 @@ class Editor extends Component {
         value={code}
         options={{
           mode: 'javascript',
-          theme: 'rubyblue',
-          lineNumbers: true,
+          theme: 'infoEditor',
           lineWrapping: true,
-          foldGutter: true,
-          gutters: ['CodeMirror-linenumbers', 'CodeMirror-foldgutter']
         }}
         onValueChange={(editor, metadata, value) => {
           console.log("hola")
