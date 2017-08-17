@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import Transition from 'react-transition-group/Transition';
 import CSSTransition from 'react-transition-group/CSSTransition';
 
-import ProjectsTitle from './components/ProjectsTitle';
+import TitleCard from './components/TitleCard';
 import CodeMirror from 'react-codemirror2';
 import Editor from './components/Editor';
 import { code } from './lib/data';
@@ -12,20 +12,22 @@ import './App.css';
 require('codemirror/mode/javascript/javascript');
 require('codemirror/lib/codemirror.css');
 require('code-mirror-themes/themes/summerfruit.css');
+require('./styles/editor.css');
 
 const AppW = styled.div`
-  background: #ffd513;
   height: 100vh;
 `;
 
-const InfoWrapper = styled.div`
-  background: #33cc99;
+const SectionW = styled.div`
+  background-image: ${props => props.color};
+  padding-bottom: 5vh;
+  padding-left: 5vw;
 `;
 
 const CodeMirrorW = styled.div`
   position: relative;
   display: flex;
-  width: 100vw;
+  width: 100%;
   overflow: hidden;
 `;
 
@@ -55,17 +57,23 @@ class App extends Component {
       <AppW className="App">
         {/*<Glitch in={this.state.in}>*/}
 
-          <InfoWrapper>
-            <ProjectsTitle/>
-              <CodeMirrorW>
-                <Glitch in={this.state.in}>
-                  <Editor code={code.info} theme={'summerfruit'}/>
-                </Glitch>
-              </CodeMirrorW>
-          </InfoWrapper>
+          <SectionW color="linear-gradient(to right, #4facfe 0%, #00f2fe 100%)">
+            <TitleCard cardName=""/>
+            <CodeMirrorW>
+              <Glitch in={this.state.in}>
+                <Editor code={code.info} theme={'editor'}/>
+              </Glitch>
+            </CodeMirrorW>
+          </SectionW>
+
+          <SectionW color="#fdca30">
+            <TitleCard cardName="PROJECTS"/>
+            <CodeMirrorW>
+              <Editor code={code.projects.pogTracker} theme={'editor'}/>
+            </CodeMirrorW>
+          </SectionW>
 
         {/*</Glitch>*/}
-        <ProjectsTitle/>
       </AppW>
     );
   }

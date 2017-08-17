@@ -6,6 +6,7 @@ const TitleW = styled.div`
   align-items: center;
   justify-content: flex-end;
   width: 100%;
+  height: 20vh;
   margin-right: 10vw;
 
   & > h1 {
@@ -17,14 +18,14 @@ const TitleW = styled.div`
   }
 `;
 
-class ProjectsTitle extends Component {
+class TitleCard extends Component {
   render() {
     return (
       <TitleW>
-        <h1>PROJECTS</h1>
+        <h1>{this.props.cardName}</h1>
       </TitleW>
     );
   }
 }
 
-export default ProjectsTitle;
+export default TitleCard;
