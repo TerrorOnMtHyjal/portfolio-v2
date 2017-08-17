@@ -7,6 +7,9 @@ import CodeMirror from 'react-codemirror2';
 import Editor from './components/Editor';
 import ProjectCard from './components/ProjectCard';
 import { code } from './lib/data';
+import pogTrackerImg from './images/pogtracker-2.png';
+import protoPageImg from './images/protopage-min.png';
+import rocketGarageImg from './images/rocket-garage-cropped-2.png';
 
 import './App.css';
 require('codemirror/mode/javascript/javascript');
@@ -68,7 +71,9 @@ class App extends Component {
 
             <SectionW color="linear-gradient(120deg, #fdfbfb 0%, #ebedee 100%)">
               <Editor code="const projects = [" theme={'titleEditor'} />
-              <ProjectCard code={ code.projects.pogTracker }/>
+              <ProjectCard img={ pogTrackerImg } code={ code.projects.pogTracker } />
+              <ProjectCard img={ protoPageImg } code={ code.projects.protoPage } />
+              <ProjectCard img={ rocketGarageImg } code={ code.projects.rocketGarage } />
               <Editor code="];" theme={'titleEditor'} />
             </SectionW>
 
