@@ -1,7 +1,6 @@
 export const code = {
   info: 
-    `class JaredMohney extends Developer {
-      constructor(desireToWork, projects){
+    ` constructor(desireToWork, projects){
         super(desireToWork, projects);
 
         //important information I'm pretty sure
@@ -22,8 +21,7 @@ export const code = {
 
     projects: {
       pogTracker: 
-        `const projects = [
-          {
+        `{
             title: 'PogTracker',
             description: \`Utilizes multiple Twitch APIs to analyze the chat in broadcast replays to generate highlights based on emote usage.
                           Checking for sudden peaks in emote use, timestamps are generated and provided to the frontend, allowing the user

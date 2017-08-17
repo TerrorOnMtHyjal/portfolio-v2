@@ -3,7 +3,6 @@ import styled from 'styled-components';
 import Transition from 'react-transition-group/Transition';
 import CSSTransition from 'react-transition-group/CSSTransition';
 
-import TitleCard from './components/TitleCard';
 import CodeMirror from 'react-codemirror2';
 import Editor from './components/Editor';
 import { code } from './lib/data';
@@ -11,8 +10,7 @@ import { code } from './lib/data';
 import './App.css';
 require('codemirror/mode/javascript/javascript');
 require('codemirror/lib/codemirror.css');
-require('code-mirror-themes/themes/summerfruit.css');
-require('./styles/editor.css');
+require('./styles/titleEditor.css');
 
 const AppW = styled.div`
   height: 100vh;
@@ -58,18 +56,18 @@ class App extends Component {
         {/*<Glitch in={this.state.in}>*/}
 
           <SectionW color="linear-gradient(to right, #4facfe 0%, #00f2fe 100%)">
-            <TitleCard cardName=""/>
+            <Editor code="class JaredMohney extends Developer {" title />
             <CodeMirrorW>
               <Glitch in={this.state.in}>
-                <Editor code={code.info} theme={'editor'}/>
+                <Editor code={code.info}/>
               </Glitch>
             </CodeMirrorW>
           </SectionW>
 
-          <SectionW color="#fdca30">
-            <TitleCard cardName="PROJECTS"/>
+          <SectionW color="linear-gradient(to right, #43e97b 0%, #38f9d7 100%)">
+            <Editor code="const projects = [" title />
             <CodeMirrorW>
-              <Editor code={code.projects.pogTracker} theme={'editor'}/>
+              <Editor code={code.projects.pogTracker} />
             </CodeMirrorW>
           </SectionW>
 

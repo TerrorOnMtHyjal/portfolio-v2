@@ -4,12 +4,22 @@ import { hyperlinkOverlay } from '../lib/tools';
 import { code } from '../lib/data.js';
 import CodeMirror from 'react-codemirror2';
 
+require('../styles/editor.css');
+require('../styles/titleEditor.css');
+
 // require('codemirror/addon/fold/foldgutter.css');
 // require('codemirror/addon/fold/foldcode.js');
 // require('codemirror/addon/fold/foldgutter.js');
 // require('codemirror/addon/fold/markdown-fold.js');
 // require('codemirror/addon/fold/indent-fold.js');
 // require('codemirror/addon/fold/brace-fold.js');
+
+const CodeW = styled.div`
+  display: flex;
+  justify-content: flex-end;
+  padding: 3em 0 1em 0;
+  width: 100%;
+`;
 
 class Editor extends Component {
 
@@ -30,18 +40,20 @@ class Editor extends Component {
 
   render() {
     return (
-      <CodeMirror
-        ref={c => this.cm = c}
-        value={this.props.code}
-        options={{
-          mode: 'javascript',
-          theme: this.props.theme,
-          lineWrapping: true,
-        }}
-        onValueChange={(editor, metadata, value) => {
-          console.log("hola")
-        }}
-      />
+      <CodeW>
+        <CodeMirror
+          ref={c => this.cm = c}
+          value={this.props.code}
+          options={{
+            mode: 'javascript',
+            theme: this.props.title ? 'titleEditor' : 'editor',
+            lineWrapping: true,
+          }}
+          onValueChange={(editor, metadata, value) => {
+            console.log("hola")
+          }}
+        />
+      </CodeW>
     );
   }
 }
