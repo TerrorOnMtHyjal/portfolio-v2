@@ -6,7 +6,6 @@ const TitleW = styled.div`
   align-items: center;
   justify-content: flex-end;
   width: 100%;
-  background: #ffd513;
   margin-right: 10vw;
 
   & > h1 {

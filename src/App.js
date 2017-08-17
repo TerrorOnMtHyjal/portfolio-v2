@@ -9,6 +9,15 @@ import Editor from './components/Editor';
 
 import './App.css';
 
+const AppW = styled.div`
+  background: #ffd513;
+  height: 100vh;
+`;
+
+const InfoWrapper = styled.div`
+  background: #33cc99;
+`;
+
 const CodeMirrorW = styled.div`
   position: relative;
   display: flex;
@@ -27,11 +36,6 @@ const Glitch = ({ children, ...props }) => (
   </CSSTransition>
 );
 
-const AppW = styled.div`
-  background: #ffd513;
-  height: 100vh;
-`;
-
 class App extends Component {
 
   constructor(){
@@ -42,19 +46,19 @@ class App extends Component {
     }
   }
 
-  handleEnd(){
-    console.log("done")
-  }
-
   render() {
     return (
       <AppW className="App">
-        <ProjectsTitle/>
-          <CodeMirrorW>
-            <Glitch in={this.state.in}>
-              <Editor />
-            </Glitch>
-          </CodeMirrorW>
+        <Glitch in={this.state.in}>
+          <InfoWrapper>
+            <ProjectsTitle/>
+              <CodeMirrorW>
+                <Glitch in={this.state.in}>
+                  <Editor />
+                </Glitch>
+              </CodeMirrorW>
+          </InfoWrapper>
+        </Glitch>
         <ProjectsTitle/>
       </AppW>
     );

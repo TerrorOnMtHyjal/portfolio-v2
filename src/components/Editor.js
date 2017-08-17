@@ -14,7 +14,7 @@ require('codemirror/addon/fold/markdown-fold.js');
 require('codemirror/addon/fold/indent-fold.js');
 require('codemirror/addon/fold/brace-fold.js');
 
-require('code-mirror-themes/themes/chanfle.css');
+require('code-mirror-themes/themes/summerfruit.css');
 require('../styles/infoEditor.css');
 
 class Editor extends Component {
@@ -41,7 +41,7 @@ class Editor extends Component {
         value={code}
         options={{
           mode: 'javascript',
-          theme: 'infoEditor',
+          theme: 'summerfruit',
           lineWrapping: true,
         }}
         onValueChange={(editor, metadata, value) => {
