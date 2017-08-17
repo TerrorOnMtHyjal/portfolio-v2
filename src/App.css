@@ -8,7 +8,7 @@
 
 .CodeMirror {
   height: 100% !important;
-  width: 100% !important;
+  width: 100%;
 }
 
 .CodeMirror .cm-url{

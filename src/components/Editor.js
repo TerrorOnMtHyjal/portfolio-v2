@@ -16,9 +16,7 @@ require('../styles/titleEditor.css');
 
 const CodeW = styled.div`
   display: flex;
-  justify-content: flex-end;
-  padding: 3em 0 1em 0;
-  width: 100%;
+  overflow: hidden;
 `;
 
 class Editor extends Component {
@@ -40,7 +38,7 @@ class Editor extends Component {
 
   render() {
     return (
-      <CodeW>
+      <CodeW title={this.props.title}>
         <CodeMirror
           ref={c => this.cm = c}
           value={this.props.code}

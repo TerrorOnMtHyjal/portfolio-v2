@@ -18,8 +18,7 @@ const AppW = styled.div`
 
 const SectionW = styled.div`
   background-image: ${props => props.color};
-  padding-bottom: 5vh;
-  padding-left: 5vw;
+  padding: 5vh 5vw;
 `;
 
 const CodeMirrorW = styled.div`
@@ -50,29 +49,30 @@ class App extends Component {
     }
   }
 
+  componentDidMount(){
+    this.infoTitle.cm.editor.focus();
+    this.infoTitle.cm.editor.setCursor(this.infoTitle.cm.editor.lineCount(), 0);
+  }
+
   render() {
     return (
-      <AppW className="App">
-        {/*<Glitch in={this.state.in}>*/}
+      // <Glitch in={this.state.in}>
+        <AppW className="App">
 
-          <SectionW color="linear-gradient(to right, #4facfe 0%, #00f2fe 100%)">
-            <Editor code="class JaredMohney extends Developer {" title />
-            <CodeMirrorW>
-              <Glitch in={this.state.in}>
-                <Editor code={code.info}/>
-              </Glitch>
-            </CodeMirrorW>
-          </SectionW>
+            <SectionW color="linear-gradient(to right, #4facfe 0%, #00f2fe 100%)">
+              <Editor ref={e => this.infoTitle = e} code="class JaredMohney extends Developer {" title />
+              <Editor code={code.info}/>
+              <Editor code="}" title />
+            </SectionW>
 
-          <SectionW color="linear-gradient(to right, #43e97b 0%, #38f9d7 100%)">
-            <Editor code="const projects = [" title />
-            <CodeMirrorW>
+            <SectionW color="linear-gradient(120deg, #fdfbfb 0%, #ebedee 100%)">
+              <Editor code="const projects = [" title />
               <Editor code={code.projects.pogTracker} />
-            </CodeMirrorW>
-          </SectionW>
+              <Editor code="];" title />
+            </SectionW>
 
-        {/*</Glitch>*/}
-      </AppW>
+        </AppW>
+      // </Glitch>
     );
   }
 }
