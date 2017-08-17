@@ -61,15 +61,15 @@ class App extends Component {
         <AppW className="App">
 
             <SectionW color="linear-gradient(to right, #4facfe 0%, #00f2fe 100%)">
-              <Editor ref={e => this.infoTitle = e} code="class JaredMohney extends Developer {" title />
+              <Editor ref={e => this.infoTitle = e} code="class JaredMohney extends Developer {" theme={'titleEditor'} />
               <Editor code={code.info}/>
-              <Editor code="}" title />
+              <Editor code="}" theme={'titleEditor'} />
             </SectionW>
 
             <SectionW color="linear-gradient(120deg, #fdfbfb 0%, #ebedee 100%)">
-              <Editor code="const projects = [" title />
+              <Editor code="const projects = [" theme={'titleEditor'} />
               <ProjectCard code={ code.projects.pogTracker }/>
-              <Editor code="];" title />
+              <Editor code="];" theme={'titleEditor'} />
             </SectionW>
 
         </AppW>

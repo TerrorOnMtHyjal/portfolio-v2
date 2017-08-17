@@ -20,20 +20,17 @@ export const code = {
 
     projects: {
       pogTracker: 
-`   {
-      title: 'PogTracker',
-      description: \`Utilizes multiple Twitch APIs to analyze the chat in broadcast replays to generate highlights based on emote usage.
-                    Checking for sudden peaks in emote use, timestamps are generated and provided to the frontend, allowing the user
-                    to sort highlights by emote and the top 10 peaks of said emote's use. Generated data is stored via MongoDB for future users
-                    looking for highlights from the same broadcast.\`,
-      stack: ['React', 'Redux', 'Twitch API', 'React Router 4', 'MongoDB', 'AWS', 'Dokku'],
-      features: [
-        'The more active the chat, the better the results. Can easily handle a chat with tens of thousands of users.',
-        'Provides all default emotes for each replay as well as subscriber emotes for partnered channels.',
-        'Heavily customized search box for better aesthetic.',
-      ],
-      screenshots: []
-    },`,
+`{
+  title: 'PogTracker',
+  description: \`Utilizes multiple Twitch APIs to analyze the chat in broadcast replays to generate highlights based on emote usage. Checking for sudden peaks in emote use, timestamps are generated and provided to the frontend, allowing the user to sort highlights by emote and the top 10 peaks of said emote's use. Generated data is stored via MongoDB for future users looking for highlights from the same broadcast.\`,
+  stack: ['React', 'Redux', 'Twitch API', 'React Router 4', 'MongoDB', 'AWS', 'Dokku'],
+  features: [
+    'The more active the chat, the better the results. Can easily handle a chat with tens of thousands of users.',
+    'Provides all default emotes for each replay as well as subscriber emotes for partnered channels.',
+    'Heavily customized search box for better aesthetic.',
+  ],
+  screenshots: []
+},`,
       protoPage:
 `   {
       title: 'ProtoPage',

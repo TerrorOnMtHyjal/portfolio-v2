@@ -6,6 +6,7 @@ import CodeMirror from 'react-codemirror2';
 
 require('../styles/editor.css');
 require('../styles/titleEditor.css');
+require('../styles/projectEditor.css');
 
 // require('codemirror/addon/fold/foldgutter.css');
 // require('codemirror/addon/fold/foldcode.js');
@@ -38,20 +39,18 @@ class Editor extends Component {
 
   render() {
     return (
-      <CodeW title={this.props.title}>
-        <CodeMirror
-          ref={c => this.cm = c}
-          value={this.props.code}
-          options={{
-            mode: 'javascript',
-            theme: this.props.title ? 'titleEditor' : 'editor',
-            lineWrapping: true,
-          }}
-          onValueChange={(editor, metadata, value) => {
-            console.log("hola")
-          }}
-        />
-      </CodeW>
+      <CodeMirror
+        ref={c => this.cm = c}
+        value={this.props.code}
+        options={{
+          mode: 'javascript',
+          theme: this.props.theme ? this.props.theme : 'editor',
+          lineWrapping: true,
+        }}
+        onValueChange={(editor, metadata, value) => {
+          console.log("hola")
+        }}
+      />
     );
   }
 }
