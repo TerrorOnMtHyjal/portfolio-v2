@@ -6,7 +6,7 @@ import CSSTransition from 'react-transition-group/CSSTransition';
 import CodeMirror from 'react-codemirror2';
 import Editor from './components/Editor';
 import ProjectCard from './components/ProjectCard';
-import { code } from './lib/data';
+import { code, data } from './lib/data';
 import pogTrackerImg from './images/pogtracker-2.png';
 import protoPageImg from './images/protopage-min.png';
 import rocketGarageImg from './images/rocket-garage-cropped-2.png';
@@ -58,6 +58,12 @@ class App extends Component {
     this.infoTitle.cm.editor.setCursor(this.infoTitle.cm.editor.lineCount(), 0);
   }
 
+  generateProjects(data){
+    return data.map(({img, code, links}) => {
+      return <ProjectCard img={img} code={code} links={links}/>
+    });
+  }
+
   render() {
     return (
       // <Glitch in={this.state.in}>
@@ -71,9 +77,7 @@ class App extends Component {
 
             <SectionW color="linear-gradient(120deg, #fdfbfb 0%, #ebedee 100%)">
               <Editor code="const projects = [" theme={'titleEditor'} />
-              <ProjectCard img={ pogTrackerImg } code={ code.projects.pogTracker } />
-              <ProjectCard img={ protoPageImg } code={ code.projects.protoPage } />
-              <ProjectCard img={ rocketGarageImg } code={ code.projects.rocketGarage } />
+              {this.generateProjects(data)}
               <Editor code="];" theme={'titleEditor'} />
             </SectionW>
 
