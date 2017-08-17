@@ -4,9 +4,10 @@
 	font-family: monospace;
 	letter-spacing: 0.3px;
 	word-spacing: 1px;
-	background: transparent;
+	background: transparent !important;
 	color: #181818;
 }
+
 .cm-s-editor .CodeMirror-lines {
 	padding: 8px 0;
 }
