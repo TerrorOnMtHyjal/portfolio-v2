@@ -4,18 +4,12 @@ import { hyperlinkOverlay } from '../lib/tools';
 import { code } from '../lib/data.js';
 import CodeMirror from 'react-codemirror2';
 
-require('codemirror/mode/javascript/javascript');
-require('codemirror/lib/codemirror.css');
-require('codemirror/theme/rubyblue.css');
-require('codemirror/addon/fold/foldgutter.css');
-require('codemirror/addon/fold/foldcode.js');
-require('codemirror/addon/fold/foldgutter.js');
-require('codemirror/addon/fold/markdown-fold.js');
-require('codemirror/addon/fold/indent-fold.js');
-require('codemirror/addon/fold/brace-fold.js');
-
-require('code-mirror-themes/themes/summerfruit.css');
-require('../styles/infoEditor.css');
+// require('codemirror/addon/fold/foldgutter.css');
+// require('codemirror/addon/fold/foldcode.js');
+// require('codemirror/addon/fold/foldgutter.js');
+// require('codemirror/addon/fold/markdown-fold.js');
+// require('codemirror/addon/fold/indent-fold.js');
+// require('codemirror/addon/fold/brace-fold.js');
 
 class Editor extends Component {
 
@@ -38,10 +32,10 @@ class Editor extends Component {
     return (
       <CodeMirror
         ref={c => this.cm = c}
-        value={code}
+        value={this.props.code}
         options={{
           mode: 'javascript',
-          theme: 'summerfruit',
+          theme: this.props.theme,
           lineWrapping: true,
         }}
         onValueChange={(editor, metadata, value) => {

@@ -6,8 +6,12 @@ import CSSTransition from 'react-transition-group/CSSTransition';
 import ProjectsTitle from './components/ProjectsTitle';
 import CodeMirror from 'react-codemirror2';
 import Editor from './components/Editor';
+import { code } from './lib/data';
 
 import './App.css';
+require('codemirror/mode/javascript/javascript');
+require('codemirror/lib/codemirror.css');
+require('code-mirror-themes/themes/summerfruit.css');
 
 const AppW = styled.div`
   background: #ffd513;
@@ -49,16 +53,18 @@ class App extends Component {
   render() {
     return (
       <AppW className="App">
-        <Glitch in={this.state.in}>
+        {/*<Glitch in={this.state.in}>*/}
+
           <InfoWrapper>
             <ProjectsTitle/>
               <CodeMirrorW>
                 <Glitch in={this.state.in}>
-                  <Editor />
+                  <Editor code={code.info} theme={'summerfruit'}/>
                 </Glitch>
               </CodeMirrorW>
           </InfoWrapper>
-        </Glitch>
+
+        {/*</Glitch>*/}
         <ProjectsTitle/>
       </AppW>
     );
