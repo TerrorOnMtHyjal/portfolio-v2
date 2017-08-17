@@ -5,6 +5,7 @@ import CSSTransition from 'react-transition-group/CSSTransition';
 
 import CodeMirror from 'react-codemirror2';
 import Editor from './components/Editor';
+import ProjectCard from './components/ProjectCard';
 import { code } from './lib/data';
 
 import './App.css';
@@ -67,7 +68,7 @@ class App extends Component {
 
             <SectionW color="linear-gradient(120deg, #fdfbfb 0%, #ebedee 100%)">
               <Editor code="const projects = [" title />
-              <Editor code={code.projects.pogTracker} />
+              <ProjectCard code={ code.projects.pogTracker }/>
               <Editor code="];" title />
             </SectionW>
 
