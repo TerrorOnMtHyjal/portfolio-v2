@@ -6,14 +6,13 @@ import pogTrackerImg from '../images/pogtracker-2.png';
 
 const ProjectCardW = styled.div`
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
 `;
 
 const ImageW = styled.div`
   background-image: url('${pogTrackerImg}');
   background-size: cover;
-  width: 400px;
-  height: auto;
+  width: 45%;
 `;
 
 class ProjectCard extends Component {
