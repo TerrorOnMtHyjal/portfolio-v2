@@ -1,15 +1,12 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
-import Transition from 'react-transition-group/Transition';
 import CSSTransition from 'react-transition-group/CSSTransition';
 
-import CodeMirror from 'react-codemirror2';
 import Editor from './components/Editor';
+import InfoCard from './components/InfoCard';
 import ProjectCard from './components/ProjectCard';
 import { code, data } from './lib/data';
-import pogTrackerImg from './images/pogtracker-2.png';
-import protoPageImg from './images/protopage-min.png';
-import rocketGarageImg from './images/rocket-garage-cropped-2.png';
+import carlton from './images/carlton.gif';
 
 import './App.css';
 require('codemirror/mode/javascript/javascript');
@@ -18,18 +15,20 @@ require('./styles/titleEditor.css');
 
 const AppW = styled.div`
   height: 100vh;
+  position: relative;
 `;
 
 const SectionW = styled.div`
   background-image: ${props => props.color};
-  padding: 5vh 5vw;
+  padding: 0 5vw;
 `;
 
-const CodeMirrorW = styled.div`
-  position: relative;
-  display: flex;
-  width: 100%;
-  overflow: hidden;
+const Carlton = styled.img`
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  transform: scale(0.1);
+  transform-origin: 100% 100%;
 `;
 
 const Glitch = ({ children, ...props }) => (
@@ -53,14 +52,9 @@ class App extends Component {
     }
   }
 
-  componentDidMount(){
-    this.infoTitle.cm.editor.focus();
-    this.infoTitle.cm.editor.setCursor(this.infoTitle.cm.editor.lineCount(), 0);
-  }
-
   generateProjects(data){
-    return data.map(({img, code, links}) => {
-      return <ProjectCard img={img} code={code} links={links}/>
+    return data.map(({img, code, links}, index) => {
+      return <ProjectCard key={ `project${index}` }img={img} code={code} links={links}/>
     });
   }
 
@@ -70,9 +64,7 @@ class App extends Component {
         <AppW className="App">
 
             <SectionW color="linear-gradient(to right, #4facfe 0%, #00f2fe 100%)">
-              <Editor ref={e => this.infoTitle = e} code="class JaredMohney extends Developer {" theme={'titleEditor'} />
-              <Editor code={code.info}/>
-              <Editor code="}" theme={'titleEditor'} />
+              <InfoCard/>
             </SectionW>
 
             <SectionW color="linear-gradient(120deg, #fdfbfb 0%, #ebedee 100%)">
@@ -81,6 +73,8 @@ class App extends Component {
               <Editor code="];" theme={'titleEditor'} />
             </SectionW>
 
+            <Carlton src={carlton}/>
+            
         </AppW>
       // </Glitch>
     );

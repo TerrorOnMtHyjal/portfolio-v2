@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import styled from 'styled-components';
 
 import Editor from './Editor';
-import pogTrackerImg from '../images/pogtracker-2.png';
 
 const ProjectCardW = styled.div`
   display: flex;
@@ -21,7 +20,7 @@ class ProjectCard extends Component {
     return (
       <ProjectCardW>
         <ImageW img={this.props.img}/>
-        <Editor code={this.props.code} theme={'projectEditor'}/>
+        <Editor code={this.props.code} theme={'projectEditor'} project/>
       </ProjectCardW>
     );
   }

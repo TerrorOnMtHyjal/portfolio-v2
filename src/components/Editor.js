@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
 import { hyperlinkOverlay } from '../lib/tools';
-import { code } from '../lib/data.js';
 import CodeMirror from 'react-codemirror2';
 
 require('../styles/editor.css');
@@ -18,6 +17,7 @@ require('../styles/projectEditor.css');
 const CodeW = styled.div`
   display: flex;
   overflow: hidden;
+  width: ${props => props.project ? '45%' : '100%'};
 `;
 
 class Editor extends Component {
@@ -39,18 +39,20 @@ class Editor extends Component {
 
   render() {
     return (
-      <CodeMirror
-        ref={c => this.cm = c}
-        value={this.props.code}
-        options={{
-          mode: 'javascript',
-          theme: this.props.theme ? this.props.theme : 'editor',
-          lineWrapping: true,
-        }}
-        onValueChange={(editor, metadata, value) => {
-          console.log("hola")
-        }}
-      />
+      <CodeW project={ this.props.project }>
+        <CodeMirror
+          ref={c => this.cm = c}
+          value={this.props.code}
+          options={{
+            mode: 'javascript',
+            theme: this.props.theme ? this.props.theme : 'editor',
+            lineWrapping: true,
+          }}
+          onValueChange={(editor, metadata, value) => {
+            console.log("hola")
+          }}
+        />
+      </CodeW>
     );
   }
 }
