@@ -9,6 +9,8 @@ const InfoCardW = styled.div`
   flex-flow: column;
   justify-content: center;
   height: 100vh;
+  background-image: linear-gradient(to right, #4facfe 0%, #00f2fe 100%);
+  padding: 0 5vw;
 `;
 
 class InfoCard extends Component {

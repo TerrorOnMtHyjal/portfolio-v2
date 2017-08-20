@@ -6,7 +6,7 @@ import Editor from './Editor';
 const ProjectCardW = styled.div`
   display: flex;
   justify-content: space-around;
-  padding: 5vh 0;
+  padding: 10vh 0;
 `;
 
 const ImageW = styled.div`

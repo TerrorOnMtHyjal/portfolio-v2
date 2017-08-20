@@ -20,7 +20,7 @@ const AppW = styled.div`
 
 const SectionW = styled.div`
   background-image: ${props => props.color};
-  padding: 0 5vw;
+  padding: 10vh 5vw;
 `;
 
 const Carlton = styled.img`
@@ -63,9 +63,7 @@ class App extends Component {
       // <Glitch in={this.state.in}>
         <AppW className="App">
 
-            <SectionW color="linear-gradient(to right, #4facfe 0%, #00f2fe 100%)">
-              <InfoCard/>
-            </SectionW>
+            <InfoCard/>
 
             <SectionW color="linear-gradient(120deg, #fdfbfb 0%, #ebedee 100%)">
               <Editor code="const projects = [" theme={'titleEditor'} />
