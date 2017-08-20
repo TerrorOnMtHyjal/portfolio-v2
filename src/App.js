@@ -53,8 +53,8 @@ class App extends Component {
   }
 
   generateProjects(data){
-    return data.map(({img, code, links}, index) => {
-      return <ProjectCard key={ `project${index}` }img={img} code={code} links={links}/>
+    return data.map((data, index) => {
+      return <ProjectCard key={ `project${index}` } data={data}/>
     });
   }
 
