@@ -43,7 +43,7 @@ export const data = [
         'Heavily customized search box for better aesthetic.',
       ]
     },`,
-    imgs: [require('../images/pogtracker-2.png')],
+    imgs: [require('../images/pogtracker-min.png'), require('../images/pogtracker-2.png')],
     links: {
       github: 'http://github.com/dustwise/proto-page',
       site: 'http://protopage.dustwise.com'
