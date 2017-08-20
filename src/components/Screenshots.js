@@ -5,13 +5,22 @@ const ScreenshotsW = styled.div`
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
+  align-items: center;
+  background-color: #222;
+  background-image: url("https://www.transparenttextures.com/patterns/axiom-pattern.png");
+  width: 100vw;
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin: 1em -50vw;
+  padding: 0 5vw;
 `;
 
 const ImgW = styled.div`
   position: relative;
-  width: 25vw;
+  width: 30vw;
   transition: all 0.2s ease-in-out;
-  margin-bottom: 3vh;
+  margin: 3em 0;
 
   &:hover {
     transform: scale(1.1);
@@ -21,13 +30,14 @@ const ImgW = styled.div`
     position: absolute;
     font-size: 3em;
     content: ",";
-    bottom: -0.1em;
+    color: white;
+    bottom: 0;
     right: -0.3em;
   }
 `;
 
 const ImgFiller = styled.div`
-  width: 25vw;
+  width: 30vw;
   height: 0;
 `;
 

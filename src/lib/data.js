@@ -22,25 +22,24 @@ export const code = {
 export const data = [
   {
     topCode:
-`   {
-      title: 'PogTracker',
+`{
+  title: 'PogTracker',
 
-      screenshots: [
-`,
+  screenshots: [`,
     bottomCode:
-`     ],
+` ],
       
-      stack: [ 'React', 'Redux', 'Twitch API', 'React Router 4', 'MongoDB', 'AWS', 'Dokku', ],
+  stack: [ 'React', 'Redux', 'Twitch API', 'React Router 4', 'MongoDB', 'AWS', 'Dokku', ],
 
-      features: [
-        '- Utilizes multiple Twitch APIs to gather channel and replay chat data of a provided broadcast replay',
-        '- Scans data for emote usage and generates timestamps for bursts of individual emotes',
-        '- Frontend converts timestamps to buttons, integrated with twitch embedded player',
-        '- The more active the chat, the better the results. Can easily handle a chat with tens of thousands of users.',
-        '- Provides all default emotes for each replay as well as subscriber emotes for partnered channels.',
-        '- Saves relevant generated data for instant delivery to future users with MongoDB',
-      ]
-    },`,
+  features: [
+    '- Utilizes multiple Twitch APIs to gather channel and replay chat data of a provided broadcast replay',
+    '- Scans data for emote usage and generates timestamps for bursts of individual emotes',
+    '- Frontend converts timestamps to buttons, integrated with twitch embedded player',
+    '- The more active the chat, the better the results. Can easily handle a chat with tens of thousands of users.',
+    '- Provides all default emotes for each replay as well as subscriber emotes for partnered channels.',
+    '- Saves relevant generated data for instant delivery to future users with MongoDB',
+  ]
+},`,
     imgs: [require('../images/pogtracker-min.png'), require('../images/pogtracker-2.png')],
     links: {
       github: 'http://github.com/dustwise/proto-page',
@@ -50,28 +49,23 @@ export const data = [
 
   {
     topCode:
-`   {
-      title: 'ProtoPage',
+`{
+  title: 'ProtoPage',
 
-      screenshots: [
-`,
+  screenshots: [`,
 
     bottomCode: 
-`   ],
+` ],
 
-      stack: [ 'React', 'Redux', 'Express', 'Node', 'Web Font Loader', ],
+  stack: [ 'React', 'Redux', 'Express', 'Node', 'Web Font Loader', ],
 
-      features: [
-        'Limit your search to popular fonts, the top 30% as determined by Google.',
-        'Search for "sans-serif", "serif", "handwriting", "display" or "monospace".',
-        'Lock in a font you like for header, subheader or paragraph, continue to randomize the rest!',
-      ],
-
-      description: \`Tired of copying and pasting font after font to "quickly" spice up your prototypes? I was too. 
-      ProtoPage is a mock startup website with a secret, it can't really do what it says...deliver you meat over the internet. 
-      That said, it DOES have a simple but intuitive control panel to quickly sort through all fonts available via Google Fonts. 
-      Find a pairing you like, grab the code and get back to the fun stuff.\`,
-    },`,
+  features: [
+    '-Randomize through Google Fonts, find pairings quickly and get back to coding.',        
+    '-Limit your search to popular fonts, the top 30% as determined by Google.',
+    '-Search for "sans-serif", "serif", "handwriting", "display" or "monospace" fonts, for three different text elements.',
+    '-Lock in a font you like for header, subheader or paragraph, continue to randomize the rest!',
+  ],
+},`,
     imgs: [require('../images/protopage-min.png')],
     links: {
       github: 'http://github.com/dustwise/pogtracker',
