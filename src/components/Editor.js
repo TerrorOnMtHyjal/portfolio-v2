@@ -1,9 +1,11 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
 import { hyperlinkOverlay } from '../lib/tools';
-import CodeMirror from 'react-codemirror2';
+import CodeMirror2 from 'react-codemirror2';
 import ReactDOM from 'react-dom';
 import Screenshots from './Screenshots';
+
+const CodeMirror = require('react-codemirror');
 var beautify_js = require('js-beautify').js_beautify
 
 require('../styles/editor.css');
@@ -18,8 +20,10 @@ const CodeW = styled.div`
 class Editor extends Component {
 
   componentDidMount(){
-
-    // this.cm.editor.getWrapperElement().addEventListener('mousedown', (e) => {
+    const methods = this.cm.getCodeMirrorInstance();
+    const instance = this.cm.getCodeMirror();
+    
+    // instance.editor.getWrapperElement().addEventListener('mousedown', (e) => {
     //   if(e.target.classList.contains('cm-url')){
 
     //     if(e.target.innerText.includes("@gmail.com")){
@@ -30,25 +34,24 @@ class Editor extends Component {
     //   }
     // });
 
-    // hyperlinkOverlay(this.cm.editor);
+    hyperlinkOverlay(instance.editor);
 
-    const charWidth = this.cm.editor.defaultCharWidth();
+    const charWidth = instance.defaultCharWidth();
     const basePadding = 4;
-    const that = this;
 
-    this.cm.editor.on("renderLine", function(cm, line, elt) {
-      var off = that.editor.countColumn(line.text, null, cm.getOption("tabSize")) * charWidth;
+    instance.on("renderLine", function(cm, line, elt) {
+      var off = methods.countColumn(line.text, null, cm.getOption("tabSize")) * charWidth;
       elt.style.textIndent = "-" + off + "px";
       elt.style.paddingLeft = (basePadding + off) + "px";
     });
 
-    this.cm.editor.setValue(beautify_js(this.cm.editor.getValue()));
+    instance.setValue(beautify_js(instance.getValue()));
 
     if(this.props.imgs){
       const node = ReactDOM.findDOMNode(this.refs.screenshots);
-      const screenshotWidget = this.cm.editor.doc.addLineWidget(4, node);
+      const screenshotWidget = instance.doc.addLineWidget(4, node);
       setTimeout(function(){
-        that.cm.editor.refresh();
+        instance.refresh();
       }, 100);
     }
   }
@@ -65,9 +68,6 @@ class Editor extends Component {
             theme: this.props.theme ? this.props.theme : 'editor',
             lineWrapping: true,
             lineNumber: true
-          }}
-          onValueChange={(editor, metadata, value) => {
-
           }}
         />
       </CodeW>
