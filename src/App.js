@@ -15,12 +15,11 @@ require('./styles/titleEditor.css');
 
 const AppW = styled.div`
   height: 100vh;
-  position: relative;
+  width: 100%;
 `;
 
 const SectionW = styled.div`
   background-image: ${props => props.color};
-  padding: 10vh 5vw;
 `;
 
 const Carlton = styled.img`

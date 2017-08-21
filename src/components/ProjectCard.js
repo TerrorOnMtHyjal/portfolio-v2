@@ -7,7 +7,7 @@ import Screenshots from './Screenshots';
 const ProjectCardW = styled.div`
   display: flex;
   flex-flow: column;
-  padding: 0 0 10vh 0;
+  padding: 10vh 0;
 `;
 
 const ImageW = styled.div`

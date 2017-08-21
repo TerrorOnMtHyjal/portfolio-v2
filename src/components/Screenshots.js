@@ -2,23 +2,23 @@ import React, { Component } from 'react';
 import styled from 'styled-components';
 
 const ScreenshotsW = styled.div`
+  position: relative;
+  left: 50%;
+  width: 100vw;
+  margin: 1em 0 0 -50vw;
+  padding: 0 5vw;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
   align-items: center;
   background-color: #222;
   background-image: url("https://www.transparenttextures.com/patterns/axiom-pattern.png");
-  width: 100vw;
-  position: relative;
-  left: 50%;
-  right: 50%;
-  margin: 1em -50vw;
-  padding: 0 5vw;
+  border-top: 2px solid silver;
 `;
 
 const ImgW = styled.div`
   position: relative;
-  width: 30vw;
+  width: 25vw;
   transition: all 0.2s ease-in-out;
   margin: 3em 0;
 
@@ -37,7 +37,7 @@ const ImgW = styled.div`
 `;
 
 const ImgFiller = styled.div`
-  width: 30vw;
+  width: 25vw;
   height: 0;
 `;
 
