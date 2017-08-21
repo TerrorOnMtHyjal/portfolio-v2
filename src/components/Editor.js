@@ -15,15 +15,10 @@ const CodeW = styled.div`
   overflow: hidden;
 `;
 
-const Tester = styled.div`
-
-`;
-
 class Editor extends Component {
 
   componentDidMount(){
-    this.cm.editor.getWrapperElement().addEventListener('mouseenter', (e) => {
-      this.cm.editor.refresh();
+    this.cm.editor.getWrapperElement().addEventListener('mousedown', (e) => {
       if(e.target.classList.contains('cm-url')){
 
         if(e.target.innerText.includes("@gmail.com")){
@@ -40,17 +35,21 @@ class Editor extends Component {
     //   console.log(e);
     // });
     this.cm.editor.setValue(beautify_js(this.cm.editor.getValue()));
+
+    const that = this;
     if(this.props.imgs){
       const node = ReactDOM.findDOMNode(this.refs.screenshots);
       const screenshotWidget = this.cm.editor.doc.addLineWidget(4, node);
-      this.cm.editor.refresh();
-      this.forceUpdate();
+      setTimeout(function(){
+        that.cm.editor.refresh();
+      }, 100);
     }
   }
 
   render() {
     return (
       <CodeW>
+        {this.props.imgs && <Screenshots ref="screenshots" imgs={this.props.imgs}/>}
         <CodeMirror
           ref={c => this.cm = c}
           value={this.props.code}
@@ -61,10 +60,9 @@ class Editor extends Component {
             lineNumber: true
           }}
           onValueChange={(editor, metadata, value) => {
-
+            console.log("changed")
           }}
         />
-        {this.props.imgs && <Screenshots ref="screenshots" imgs={this.props.imgs}/>}
       </CodeW>
     );
   }
