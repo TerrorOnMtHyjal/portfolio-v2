@@ -16,29 +16,29 @@ export const code = {
       //irrelevant?
       // this.favoriteMovies = [ 'Little Shop of Horrors', 'Aliens', 'There Will Be Blood', 'Terminator 2: Judgment Day', ];
       // this.favoriteGames = [ 'Shadow of the Colossus', 'Kingdom Hearts 2', 'Sonic The Hedgehog 3 & Knuckles', 'DOTA2', ];
-    }`,
+      }`,
 };
 
 export const data = [
   {
     topCode:
 `{
-  title: 'PogTracker',
+title: 'PogTracker',
 
-  screenshots: [`,
+screenshots: [`,
     bottomCode:
-` ],
+`],
       
-  stack: [ 'React', 'Redux', 'Twitch API', 'React Router 4', 'MongoDB', 'AWS', 'Dokku', ],
+stack: [ 'React', 'Redux', 'Twitch API', 'React Router 4', 'MongoDB', 'AWS', 'Dokku', ],
 
-  features: [
-    '- Utilizes multiple Twitch APIs to gather channel and replay chat data of a provided broadcast replay',
-    '- Scans data for emote usage and generates timestamps for bursts of individual emotes',
-    '- Frontend converts timestamps to buttons, integrated with twitch embedded player',
-    '- The more active the chat, the better the results. Can easily handle a chat with tens of thousands of users.',
-    '- Provides all default emotes for each replay as well as subscriber emotes for partnered channels.',
-    '- Saves relevant generated data for instant delivery to future users with MongoDB',
-  ]
+features: [
+'- Utilizes multiple Twitch APIs to gather channel and replay chat data of a provided broadcast replay',
+'- Scans data for emote usage and generates timestamps for bursts of individual emotes',
+'- Frontend converts timestamps to buttons, integrated with twitch embedded player',
+'- The more active the chat, the better the results. Can easily handle a chat with tens of thousands of users.',
+'- Provides all default emotes for each replay as well as subscriber emotes for partnered channels.',
+'- Saves relevant generated data for instant delivery to future users with MongoDB',
+]
 },`,
     imgs: [require('../images/pogtracker-min.png'), require('../images/pogtracker-2.png')],
     links: {

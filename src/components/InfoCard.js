@@ -8,9 +8,14 @@ const InfoCardW = styled.div`
   display: flex;
   flex-flow: column;
   justify-content: center;
+  align-items: center;
   height: 100vh;
+  width: 100%;
   background-image: linear-gradient(to right, #4facfe 0%, #00f2fe 100%);
-  padding: 0 5vw;
+`;
+
+const InnerW = styled.div`
+  width: 80%;
 `;
 
 class InfoCard extends Component {
@@ -23,9 +28,11 @@ class InfoCard extends Component {
   render() {
     return (
       <InfoCardW>
-        <Editor ref={e => this.infoTitle = e} code="class JaredMohney extends Developer {" theme={'titleEditor'} />
-        <Editor code={code.info}/>
-        <Editor code="}" theme={'titleEditor'} />
+        <InnerW>
+          <Editor ref={e => this.infoTitle = e} code="class JaredMohney extends Developer {" theme={'titleEditor'} />
+          <Editor code={code.info}/>
+          <Editor code="}" theme={'titleEditor'} />
+        </InnerW>
       </InfoCardW>
     );
   }

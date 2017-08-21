@@ -2,10 +2,9 @@ import React, { Component } from 'react';
 import styled from 'styled-components';
 import CSSTransition from 'react-transition-group/CSSTransition';
 
-import Editor from './components/Editor';
 import InfoCard from './components/InfoCard';
-import ProjectCard from './components/ProjectCard';
-import { code, data } from './lib/data';
+import Projects from './components/Projects';
+import { code } from './lib/data';
 import carlton from './images/carlton.gif';
 
 import './App.css';
@@ -16,10 +15,7 @@ require('./styles/titleEditor.css');
 const AppW = styled.div`
   height: 100vh;
   width: 100%;
-`;
-
-const SectionW = styled.div`
-  background-image: ${props => props.color};
+  overflow-x: hidden;
 `;
 
 const Carlton = styled.img`
@@ -51,29 +47,17 @@ class App extends Component {
     }
   }
 
-  generateProjects(data){
-    return data.map((data, index) => {
-      return <ProjectCard key={ `project${index}` } data={data}/>
-    });
-  }
-
   render() {
     return (
-      // <Glitch in={this.state.in}>
-        <AppW className="App">
+      //<Glitch in={this.state.in}>
+      <AppW className="App">
 
-            <InfoCard/>
-
-            <SectionW color="linear-gradient(120deg, #fdfbfb 0%, #ebedee 100%)">
-              <Editor code="const projects = [" theme={'titleEditor'} />
-              {this.generateProjects(data)}
-              <Editor code="];" theme={'titleEditor'} />
-            </SectionW>
-
-            <Carlton src={carlton}/>
-            
-        </AppW>
-      // </Glitch>
+          <InfoCard/>
+          <Projects/>
+          <Carlton src={carlton}/>
+          
+      </AppW>
+      //</Glitch>
     );
   }
 }

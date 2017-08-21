@@ -3,10 +3,9 @@ import styled from 'styled-components';
 
 const ScreenshotsW = styled.div`
   position: relative;
-  left: 50%;
   width: 100vw;
-  margin: 1em 0 0 -50vw;
-  padding: 0 5vw;
+  left: -50vw;
+  margin-left: 50%;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
@@ -14,11 +13,21 @@ const ScreenshotsW = styled.div`
   background-color: #222;
   background-image: url("https://www.transparenttextures.com/patterns/axiom-pattern.png");
   border-top: 2px solid silver;
+  margin-top: 1em;
+  margin-bottom: 1em;
+`;
+
+const InnerW = styled.div`
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  width: 80%;
 `;
 
 const ImgW = styled.div`
   position: relative;
-  width: 25vw;
+  width: 30%;
   transition: all 0.2s ease-in-out;
   margin: 3em 0;
 
@@ -37,7 +46,7 @@ const ImgW = styled.div`
 `;
 
 const ImgFiller = styled.div`
-  width: 25vw;
+  width: 30%;
   height: 0;
 `;
 
@@ -57,7 +66,7 @@ class Screenshots extends Component {
       )
     });
 
-    imgArray.push(<ImgFiller/>,<ImgFiller/>);
+    imgArray.push(<ImgFiller/>, <ImgFiller/>);
 
     return imgArray;
   }
@@ -65,7 +74,9 @@ class Screenshots extends Component {
   render() {
     return (
       <ScreenshotsW>
-        {this.generateScreenshots(this.props.imgs)} 
+        <InnerW>
+          {this.generateScreenshots(this.props.imgs)}
+        </InnerW>
       </ScreenshotsW>
     );
   }
