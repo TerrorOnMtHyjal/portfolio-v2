@@ -15,9 +15,7 @@ class ProjectCard extends Component {
   render() {
     return (
       <ProjectCardW>
-        <Editor code={this.props.data.topCode} theme={'projectEditor'} />
-        <Screenshots imgs={this.props.data.imgs} />
-        <Editor code={this.props.data.bottomCode} theme={'projectEditor'} />
+        <Editor code={ this.props.data.code } imgs={ this.props.data.imgs } theme={'projectEditor'} />
       </ProjectCardW>
     );
   }

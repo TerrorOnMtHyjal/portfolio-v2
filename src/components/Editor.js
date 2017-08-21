@@ -22,7 +22,8 @@ const Tester = styled.div`
 class Editor extends Component {
 
   componentDidMount(){
-    this.cm.editor.getWrapperElement().addEventListener('mousedown', (e) => {
+    this.cm.editor.getWrapperElement().addEventListener('mouseenter', (e) => {
+      this.cm.editor.refresh();
       if(e.target.classList.contains('cm-url')){
 
         if(e.target.innerText.includes("@gmail.com")){
@@ -38,9 +39,13 @@ class Editor extends Component {
     // this.cm.editor.on("renderLine", (e) => {
     //   console.log(e);
     // });
-    const node = ReactDOM.findDOMNode(this.refs.screenshots);
     this.cm.editor.setValue(beautify_js(this.cm.editor.getValue()));
-    this.cm.editor.doc.addLineWidget(1, node);
+    if(this.props.imgs){
+      const node = ReactDOM.findDOMNode(this.refs.screenshots);
+      const screenshotWidget = this.cm.editor.doc.addLineWidget(4, node);
+      this.cm.editor.refresh();
+      this.forceUpdate();
+    }
   }
 
   render() {
@@ -56,10 +61,10 @@ class Editor extends Component {
             lineNumber: true
           }}
           onValueChange={(editor, metadata, value) => {
-            {/*console.log("hola")*/}
+
           }}
         />
-        <Screenshots ref="screenshots" imgs={this.props.imgs ? this.props.imgs : []}/>
+        {this.props.imgs && <Screenshots ref="screenshots" imgs={this.props.imgs}/>}
       </CodeW>
     );
   }

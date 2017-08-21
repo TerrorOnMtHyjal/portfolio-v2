@@ -6,6 +6,7 @@
 	word-spacing: 1px;
 	background: transparent !important;
 	color: #181818;
+	width: 100%;
 }
 
 .cm-s-editor .CodeMirror-lines {
