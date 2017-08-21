@@ -21,8 +21,10 @@ const InnerW = styled.div`
 class InfoCard extends Component {
 
   componentDidMount(){
-    // this.infoTitle.cm.editor.focus();
-    // this.infoTitle.cm.editor.setCursor(this.infoTitle.cm.editor.lineCount(), 0);
+    const instance = this.infoTitle.cm.getCodeMirror();
+
+    this.infoTitle.cm.focus();
+    instance.setCursor(instance.lineCount(), 0);
   }
 
   render() {

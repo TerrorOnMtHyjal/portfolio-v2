@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
 import { hyperlinkOverlay } from '../lib/tools';
-import CodeMirror2 from 'react-codemirror2';
 import ReactDOM from 'react-dom';
+import CodeMirror from 'react-codemirror';
+
 import Screenshots from './Screenshots';
 
-const CodeMirror = require('react-codemirror');
 var beautify_js = require('js-beautify').js_beautify
 
 require('../styles/editor.css');
@@ -34,7 +34,7 @@ class Editor extends Component {
     //   }
     // });
 
-    hyperlinkOverlay(instance.editor);
+    // hyperlinkOverlay(instance.editor);
 
     const charWidth = instance.defaultCharWidth();
     const basePadding = 4;
