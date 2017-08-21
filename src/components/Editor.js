@@ -18,25 +18,32 @@ const CodeW = styled.div`
 class Editor extends Component {
 
   componentDidMount(){
-    this.cm.editor.getWrapperElement().addEventListener('mousedown', (e) => {
-      if(e.target.classList.contains('cm-url')){
 
-        if(e.target.innerText.includes("@gmail.com")){
-          window.location.href = "mailto:jared.mohney@gmail.com";
-        }else{
-          window.open(e.target.innerText, '_blank');
-        }
-      }
+    // this.cm.editor.getWrapperElement().addEventListener('mousedown', (e) => {
+    //   if(e.target.classList.contains('cm-url')){
+
+    //     if(e.target.innerText.includes("@gmail.com")){
+    //       window.location.href = "mailto:jared.mohney@gmail.com";
+    //     }else{
+    //       window.open(e.target.innerText, '_blank');
+    //     }
+    //   }
+    // });
+
+    // hyperlinkOverlay(this.cm.editor);
+
+    const charWidth = this.cm.editor.defaultCharWidth();
+    const basePadding = 4;
+    const that = this;
+
+    this.cm.editor.on("renderLine", function(cm, line, elt) {
+      var off = that.editor.countColumn(line.text, null, cm.getOption("tabSize")) * charWidth;
+      elt.style.textIndent = "-" + off + "px";
+      elt.style.paddingLeft = (basePadding + off) + "px";
     });
 
-    hyperlinkOverlay(this.cm.editor);
-
-    // this.cm.editor.on("renderLine", (e) => {
-    //   console.log(e);
-    // });
     this.cm.editor.setValue(beautify_js(this.cm.editor.getValue()));
 
-    const that = this;
     if(this.props.imgs){
       const node = ReactDOM.findDOMNode(this.refs.screenshots);
       const screenshotWidget = this.cm.editor.doc.addLineWidget(4, node);
@@ -60,7 +67,7 @@ class Editor extends Component {
             lineNumber: true
           }}
           onValueChange={(editor, metadata, value) => {
-            console.log("changed")
+
           }}
         />
       </CodeW>
