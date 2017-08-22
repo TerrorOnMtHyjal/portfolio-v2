@@ -17,7 +17,7 @@
 
 .cm-s-editor {
 	font-size: 1.2em;
-	line-height: 1.25em;
+	line-height: 1.3em;
 	font-family: 'Permanent Marker', monospace;
 	letter-spacing: 0.3px;
 	word-spacing: 1px;
@@ -56,8 +56,12 @@
 .cm-s-editor .cm-string {
 	color: #5cdb95;
 }
+
+.cm-s-editor .cm-string-2 {
+	color: #8ee4af;
+}
 .cm-s-editor .cm-variable {
-	color: #964a37;
+	color: #db8a5c;
 }
 .cm-s-editor .cm-variable-2 {
 	color: #379683;
