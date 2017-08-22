@@ -9,8 +9,18 @@ const ProjectsW = styled.div`
   display: flex;
   flex-flow: column;
   align-items: center;
-  background-image: linear-gradient(120deg, #fdfbfb 0%, #ebedee 100%);
+  // background-image: linear-gradient(120deg, #fdfbfb 0%, #ebedee 100%);
+  background: #3feee6;
 `;
+
+/*
+#fc445 red 
+#3feee6 bright teal 
+#55bcc9 muted teal 
+#97caef muted dark blue 
+#cafafe muted light blue
+#1a1a1d dark gray
+*/
 
 const InnerW = styled.div`
   width: 80%;

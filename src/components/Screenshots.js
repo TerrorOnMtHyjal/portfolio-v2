@@ -25,14 +25,14 @@ const ImgW = styled.div`
     transform: scale(1.1);
   }
 
-  &::after {
-    position: absolute;
-    font-size: 2em;
-    content: ",";
-    color: white;
-    bottom: 0;
-    right: -0.3em;
-  }
+  // &::after {
+  //   position: absolute;
+  //   font-size: 2em;
+  //   content: ",";
+  //   color: white;
+  //   bottom: 0;
+  //   right: -0.3em;
+  // }
 `;
 
 const ImgFiller = styled.div`

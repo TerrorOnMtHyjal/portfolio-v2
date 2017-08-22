@@ -1,7 +1,16 @@
+/*
+#fc445 red 
+#3feee6 bright teal 
+#55bcc9 muted teal 
+#97caef muted dark blue 
+#cafafe muted light blue
+#1a1a1d dark gray
+*/
+
 .cm-s-editor {
 	font-size: 1.2em;
 	line-height: 1.25em;
-	font-family: monospace;
+	font-family: 'Permanent Marker', monospace;
 	letter-spacing: 0.3px;
 	word-spacing: 1px;
 	background: transparent !important;
