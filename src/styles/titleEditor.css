@@ -8,9 +8,9 @@
 */
 
 .cm-s-titleEditor {
-	font-size: 3em;
+	font-size: 4em;
 	line-height: 1.5em;
-	font-family: monospace;
+	font-family: 'Share Tech Mono', monospace !important;
 	letter-spacing: 0.3px;
 	word-spacing: 1px;
 	background: transparent !important;
@@ -42,7 +42,7 @@
 	background: #dbf3cd;
 }
 .cm-s-titleEditor .cm-keyword {
-	color: #fb6620;
+	color: white;
 }
 .cm-s-titleEditor .cm-string {
 	color: #1586d2;
@@ -61,6 +61,12 @@
 }
 .cm-s-titleEditor .cm-operator {
 	color: #fb6620;
+}
+.cm-s-titleEditor .cm-def {
+	color: #3feee6;
+}
+.cm-s-titleEditor .cm-variable {
+	color: #3feee6;
 }
 .cm-s-titleEditor .CodeMirror-linenumber {
 	color: #22a21f;

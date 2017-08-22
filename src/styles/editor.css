@@ -7,6 +7,14 @@
 #1a1a1d dark gray
 */
 
+/*
+#05386B dark blue 
+#379683 muted dark green 
+#5cdb95 bright green 
+#8ee4af muted bright green 
+#edf5e1 off white
+*/
+
 .cm-s-editor {
 	font-size: 1.2em;
 	line-height: 1.25em;
@@ -52,7 +60,8 @@
 	color: #F92672;
 }
 .cm-s-editor .cm-property {
-	color: null;
+	color: white;
+	font-weight: bold;
 }
 .cm-s-editor .cm-atom {
 	color: null;
