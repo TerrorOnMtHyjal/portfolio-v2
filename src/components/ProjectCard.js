@@ -6,16 +6,14 @@ import Screenshots from './Screenshots';
 
 const ProjectCardW = styled.div`
   display: flex;
-  flex-flow: column;
-  margin: 10em 0;
-  width: 100%;
+  width: 80%;
 `;
 
 class ProjectCard extends Component {
   render() {
     return (
       <ProjectCardW>
-        <Editor code={ this.props.data.code } imgs={ this.props.data.imgs } theme={'projectEditor'} />
+        <Editor code={ this.props.data.code } imgs={ this.props.data.imgs } theme={ 'projectEditor' } />
       </ProjectCardW>
     );
   }
