@@ -29,7 +29,8 @@ class Editor extends Component {
         if(e.target.innerText.includes("@gmail.com")){
           window.location.href = "mailto:jared.mohney@gmail.com";
         }else{
-          window.open(e.target.innerText, '_blank');
+          console.log(e.target.innerText)
+          window.open("http://" + e.target.innerText, '_blank');
         }
       }
     });

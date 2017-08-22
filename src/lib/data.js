@@ -8,9 +8,9 @@ export const code = {
     this.location = 'Longmont, CO';
     this.skills = [ 'Javascript', 'React', 'Redux', 'CSS3', 'HTML5', 'Express', 'Node', ];
     this.description = \`\${this.name} is a full stack javascript developer with an interest in esports, chinchillas and bettering himself through challenging work.\`;
-    this.github = 'http://www.github.com/dustwise';
-    this.linkedIn = 'www.linkedin.com/in/jaredmohney';
-    this.email = 'jared.mohney@gmail.com';
+    this.github = "www.github.com/dustwise";
+    this.linkedIn = "www.linkedin.com/in/jaredmohney";
+    this.email = "jared.mohney@gmail.com";
 
     }`,
 };
