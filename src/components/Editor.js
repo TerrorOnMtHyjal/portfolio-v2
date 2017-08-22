@@ -23,18 +23,18 @@ class Editor extends Component {
     const methods = this.cm.getCodeMirrorInstance();
     const instance = this.cm.getCodeMirror();
     
-    // instance.editor.getWrapperElement().addEventListener('mousedown', (e) => {
-    //   if(e.target.classList.contains('cm-url')){
+    instance.getWrapperElement().addEventListener('mousedown', (e) => {
+      if(e.target.classList.contains('cm-url')){
 
-    //     if(e.target.innerText.includes("@gmail.com")){
-    //       window.location.href = "mailto:jared.mohney@gmail.com";
-    //     }else{
-    //       window.open(e.target.innerText, '_blank');
-    //     }
-    //   }
-    // });
+        if(e.target.innerText.includes("@gmail.com")){
+          window.location.href = "mailto:jared.mohney@gmail.com";
+        }else{
+          window.open(e.target.innerText, '_blank');
+        }
+      }
+    });
 
-    // hyperlinkOverlay(instance.editor);
+    hyperlinkOverlay(instance);
 
     const charWidth = instance.defaultCharWidth();
     const basePadding = 4;
