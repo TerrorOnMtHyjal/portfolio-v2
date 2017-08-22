@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
 import { code } from '../lib/data';
 
 import Editor from './Editor';
 
 const InfoCardW = styled.div`
+  position: relative;
   display: flex;
   flex-flow: column;
   justify-content: center;
@@ -34,7 +35,55 @@ const InfoCardW = styled.div`
 
 const InnerW = styled.div`
   width: 80%;
+  z-index: 1;
 `;
+
+const Bars = styled.div`
+  position: absolute;
+  top: 0;
+  right: 0;
+  display: flex;
+  align-items: flex-end;
+  flex-flow: column;
+  overflow: hidden;
+  height: 100%;
+  width: 50%;
+`;
+
+const Bar = styled.div`
+  position: relative;
+  right: 0;
+  width: ${props => props.length}%;
+  min-height: 1px;
+  flex-grow: 1;
+  background-color: #5cdb95;
+  filter: grayscale(${props => props.greyscale}%);
+  opacity: ${props => props.opacity};
+  animation: ${generateAnimation(props => props.length)} ${props => props.speed}s linear infinite;
+  animation-direction: alternate;
+
+  &::before {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 5px;
+    background: white;
+    content: '';
+  }
+`;
+
+function generateAnimation(length){
+  return keyframes`
+    from{
+      width: ${length}%;
+    }
+
+    to {
+      width: 0%;
+    }
+  `;
+}
 
 class InfoCard extends Component {
 
@@ -45,6 +94,26 @@ class InfoCard extends Component {
     instance.setCursor(instance.lineCount(), 0);
   }
 
+  generateBars(amount){
+    const bars = [];
+
+    for(let i = 0; i < amount; i++){
+      const length = Math.floor(Math.random() * 100) + 1;
+      const opacity = Math.random() / 8;
+      let speed = ((Math.random() * 10) + 1) * 2;
+      const greyscale = (Math.random() * 100) + 1;
+
+      if(speed < 3){
+        speed = speed * 2;
+      }
+      const newBar = <Bar length={length} opacity={opacity} speed={speed} greyscale={greyscale}/>
+
+      bars.push(newBar);
+    }
+
+    return bars;
+  }
+
   render() {
     return (
       <InfoCardW>
@@ -53,6 +122,9 @@ class InfoCard extends Component {
           <Editor code={code.info}/>
           <Editor code="}" theme={'titleEditor'} />
         </InnerW>
+        <Bars>
+          {this.generateBars(250)}
+        </Bars>
       </InfoCardW>
     );
   }
