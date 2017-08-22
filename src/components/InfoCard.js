@@ -59,7 +59,7 @@ const Bar = styled.div`
   background-color: #5cdb95;
   filter: grayscale(${props => props.greyscale}%);
   opacity: ${props => props.opacity};
-  animation: ${generateAnimation(props => props.length)} ${props => props.speed}s linear infinite;
+  animation: ${generateAnimation(props => props.length)} ${props => props.speed}s ease-in-out infinite;
   animation-direction: alternate;
 
   &::before {
@@ -99,9 +99,9 @@ class InfoCard extends Component {
 
     for(let i = 0; i < amount; i++){
       const length = Math.floor(Math.random() * 100) + 1;
-      const opacity = Math.random() / 8;
-      let speed = ((Math.random() * 10) + 1) * 2;
-      const greyscale = (Math.random() * 100) + 1;
+      const opacity = Math.random() / 5;
+      let speed = ((Math.random() * 10) + 1);
+      const greyscale = (Math.random() * 100) * 2;
 
       if(speed < 3){
         speed = speed * 2;
