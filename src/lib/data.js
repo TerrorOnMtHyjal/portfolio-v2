@@ -3,7 +3,6 @@ export const code = {
 `   constructor(desireToWork, projects){
       super(desireToWork, projects);
 
-      //important information I'm pretty sure
       this.name = 'Jared Mohney';
       this.title = 'Web Developer';
       this.location = 'Longmont, CO';
@@ -13,11 +12,15 @@ export const code = {
       this.linkedIn = 'www.linkedin.com/in/jaredmohney';
       this.email = 'jared.mohney@gmail.com';
 
-      //irrelevant?
-      // this.favoriteMovies = [ 'Little Shop of Horrors', 'Aliens', 'There Will Be Blood', 'Terminator 2: Judgment Day', ];
-      // this.favoriteGames = [ 'Shadow of the Colossus', 'Kingdom Hearts 2', 'Sonic The Hedgehog 3 & Knuckles', 'DOTA2', ];
       }`,
 };
+
+export const comments = `
+  //important information I'm pretty sure
+  //irrelevant?
+  // this.favoriteMovies = [ 'Little Shop of Horrors', 'Aliens', 'There Will Be Blood', 'Terminator 2: Judgment Day', ];
+  // this.favoriteGames = [ 'Shadow of the Colossus', 'Kingdom Hearts 2', 'Sonic The Hedgehog 3 & Knuckles', 'DOTA2', ];
+`;
 
 export const data = [
   {

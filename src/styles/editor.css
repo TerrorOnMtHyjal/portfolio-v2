@@ -22,7 +22,7 @@
 	letter-spacing: 0.3px;
 	word-spacing: 1px;
 	background: transparent !important;
-	color: #181818;
+	color: #edf5e1 !important;
 	width: 100%;
 }
 
@@ -51,17 +51,19 @@
 	background: #dbf3cd;
 }
 .cm-s-editor .cm-keyword {
-	color: #fb6620;
+	color: #379683;
 }
 .cm-s-editor .cm-string {
-	color: #1586d2;
+	color: #5cdb95;
+}
+.cm-s-editor .cm-variable {
+	color: #964a37;
 }
 .cm-s-editor .cm-variable-2 {
-	color: #F92672;
+	color: #379683;
 }
 .cm-s-editor .cm-property {
-	color: white;
-	font-weight: bold;
+	color: #edf5e1;
 }
 .cm-s-editor .cm-atom {
 	color: null;
@@ -70,7 +72,7 @@
 	color: null;
 }
 .cm-s-editor .cm-operator {
-	color: #fb6620;
+	color: #379683;
 }
 .cm-s-editor .CodeMirror-linenumber {
 	color: #22a21f;

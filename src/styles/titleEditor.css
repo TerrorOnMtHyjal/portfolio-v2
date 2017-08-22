@@ -7,6 +7,14 @@
 #1a1a1d dark gray
 */
 
+/*
+#05386B dark blue 
+#379683 muted dark green 
+#5cdb95 bright green 
+#8ee4af muted bright green 
+#edf5e1 off white
+*/
+
 .cm-s-titleEditor {
 	font-size: 4em;
 	line-height: 1.5em;
@@ -14,7 +22,7 @@
 	letter-spacing: 0.3px;
 	word-spacing: 1px;
 	background: transparent !important;
-	color: #181818;
+	color: #edf5e1 !important;
 	width: 100%;
 }
 .cm-s-titleEditor .CodeMirror-lines {
@@ -42,7 +50,7 @@
 	background: #dbf3cd;
 }
 .cm-s-titleEditor .cm-keyword {
-	color: white;
+	color: #edf5e1;
 }
 .cm-s-titleEditor .cm-string {
 	color: #1586d2;
@@ -51,7 +59,7 @@
 	color: #F92672;
 }
 .cm-s-titleEditor .cm-property {
-	color: null;
+	color: #5cdb95;
 }
 .cm-s-titleEditor .cm-atom {
 	color: null;
@@ -63,10 +71,10 @@
 	color: #fb6620;
 }
 .cm-s-titleEditor .cm-def {
-	color: #3feee6;
+	color: #5cdb95;
 }
 .cm-s-titleEditor .cm-variable {
-	color: #3feee6;
+	color: #5cdb95;
 }
 .cm-s-titleEditor .CodeMirror-linenumber {
 	color: #22a21f;

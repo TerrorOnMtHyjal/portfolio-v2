@@ -12,7 +12,7 @@ const InfoCardW = styled.div`
   height: 100vh;
   width: 100%;
   // background-image: linear-gradient(to right, #4facfe 0%, #00f2fe 100%);
-  background-color: #97caef;
+  background-color: #05386B;
 `;
 
 /*
@@ -22,6 +22,14 @@ const InfoCardW = styled.div`
 #97caef muted dark blue 
 #cafafe muted light blue
 #1a1a1d dark gray
+*/
+
+/*
+#05386B dark blue 
+#379683 muted dark green 
+#5cdb95 bright green 
+#8ee4af muted bright green 
+#edf5e1 off white
 */
 
 const InnerW = styled.div`
