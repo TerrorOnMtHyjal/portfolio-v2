@@ -54,7 +54,7 @@ const EditorsW = styled.div`
   background: white;
   padding: 1em 0;
   margin-top: 10em;
-  padding: 5em;
+  padding: 5em 0;
 `;
 
 class Projects extends Component {
