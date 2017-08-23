@@ -8,7 +8,7 @@ const ScreenshotsW = styled.div`
   justify-content: space-around;
   align-items: center;
   height: auto;
-  // background-color: #222;
+  // background-color: #05386B;
   // background-image: url("https://www.transparenttextures.com/patterns/axiom-pattern.png");
   // border-top: 2px solid silver;
   margin-top: 1em;

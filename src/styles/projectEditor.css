@@ -22,7 +22,7 @@
 	letter-spacing: 0.3px;
 	word-spacing: 1px;
 	background: transparent !important;
-	color: #edf5e1 !important;
+	color: #379683 !important;
 	width: 100%;
 }
 
@@ -54,11 +54,11 @@
 	color: #379683;
 }
 .cm-s-projectEditor .cm-string {
-	color: #5cdb95;
+	color: #05386B;
 }
 
 .cm-s-projectEditor .cm-string-2 {
-	color: #8ee4af;
+	color: #05386B;
 }
 .cm-s-projectEditor .cm-variable {
 	color: #db8a5c;
