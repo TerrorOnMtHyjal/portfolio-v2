@@ -44,6 +44,13 @@ class Editor extends Component {
       var off = methods.countColumn(line.text, null, cm.getOption("tabSize")) * charWidth;
       elt.style.textIndent = "-" + off + "px";
       elt.style.paddingLeft = (basePadding + off) + "px";
+
+      if(line.text.includes("title:")){
+        elt.style.textIndent = 0;
+        elt.style.paddingLeft = 0;
+        elt.style.marginLeft = "-" + (charWidth * 2) + "px";
+        elt.style.fontSize = "1.5em";
+      }
     });
 
     instance.setValue(beautify_js(instance.getValue()));
@@ -51,6 +58,7 @@ class Editor extends Component {
     if(this.props.imgs){
       const node = ReactDOM.findDOMNode(this.refs.screenshots);
       const screenshotWidget = instance.doc.addLineWidget(4, node);
+
       setTimeout(function(){
         instance.refresh();
       }, 100);

@@ -45,8 +45,35 @@ features: [
 },`,
     imgs: [require('../images/pogtracker-min.png'), require('../images/pogtracker-2.png'), ],
     links: {
-      github: 'http://github.com/dustwise/proto-page',
-      site: 'http://protopage.dustwise.com'
+      github: 'www.github.com/dustwise/proto-page',
+      site: 'www.protopage.dustwise.com'
     }
   },
+
+  {
+    code:
+`{
+title: 'ProtoPage',
+
+screenshots: [
+
+],
+
+stack: [ 'React', 'Redux', 'Google Fonts API', 'Web Font Loader', 'Styled Components'],
+
+features: [
+'- Randomize through Google Fonts limiting by font type (sans-serif, handwriting, etc.) per element.',
+'- Instantly get a feel for what pairings would look like on the totally real cloud-delivered meat startup page'
+'- Look through all available font variants, per font. 100 italic? 900 regular? We got you!',
+'- Limit your search to popular fonts, the top 30% per category as determined by Google',
+'- Find a font you like? Lock it in and continue to randomize the other elements',
+'- Got your fonts? Grab your css and get back to the fun stuff',
+]
+},`,
+    imgs: [require('../images/protopage-min.png')],
+    links: {
+        github: 'www.github.com/dustwise/proto-page',
+        site: 'www.protopage.dustwise.com'
+    }
+  }
 ];
