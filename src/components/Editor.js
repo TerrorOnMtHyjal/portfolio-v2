@@ -73,7 +73,7 @@ class Editor extends Component {
         });
 
         elt.style.fontSize = '2em';
-        elt.style.lineHeight = '1.5em';
+        elt.style.lineHeight = '1em';
         elt.style.fontFamily = "'Share Tech Mono', monospace";
       }
     });
@@ -91,7 +91,7 @@ class Editor extends Component {
 
     if(this.props.info){
       const node = ReactDOM.findDOMNode(this.refs.infoLinks);
-      const screenshotWidget = instance.doc.addLineWidget(12, node);
+      const screenshotWidget = instance.doc.addLineWidget(11, node);
 
       setTimeout(function(){
         instance.refresh();

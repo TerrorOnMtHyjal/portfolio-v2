@@ -4,27 +4,27 @@ import styled from 'styled-components';
 const LinksW = styled.div`
   display: flex;
   align-items: center;
-  margin-left: 6em;
+  margin-left: 4em;
   padding: 0.2em 0;
 `;
 
 const LinkButton = styled.a`
   position: relative;
-  color: #5cdb95;
-  font-size: 2em;
+  color: #edf5e1;
+  font-size: 3em;
   margin-right: 1.5em;
 
   &::after {
     position: absolute;
-    font-size: 0.75em;
+    font-size: 0.5em;
     right: -0.5em;
-    bottom: 0.1em;
+    bottom: 0.2em;
     color: white;
     content: ',';
   }
 
   &:hover {
-    color: white;
+    color: #5cdb95;
   }
 `;
 

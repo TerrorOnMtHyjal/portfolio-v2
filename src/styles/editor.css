@@ -29,6 +29,9 @@
 .cm-s-editor .CodeMirror-lines {
 	padding: 8px 0;
 }
+.cm-s-editor .CodeMirror-line {
+	padding: 0.15em 0;
+}
 .cm-s-editor .CodeMirror-gutters {
 	box-shadow: 1px 0 2px 0 rgba(0, 0, 0, 0.5);
 	-webkit-box-shadow: 1px 0 2px 0 rgba(0, 0, 0, 0.5);

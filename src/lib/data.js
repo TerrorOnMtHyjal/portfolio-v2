@@ -1,22 +1,20 @@
 export const code = {
   info: 
 `class JaredMohney extends Developer {
-
 constructor(desireToWork, projects){
 super(desireToWork, projects);
 
 this.name = 'Jared Mohney';
 this.title = 'Web Developer';
 this.location = 'Longmont, CO';
-this.skills = [ 'Javascript', 'React', 'Redux', 'CSS3', 'HTML5', 'Express', 'Node', ];
+this.skills = [ 'Javascript', 'React', 'Redux', 'Express', 'Node', 'PostgreSQL', 'MongoDB', ];
 this.description = \`\${this.name} is a full stack javascript developer with an interest in esports, chinchillas and bettering himself through challenging work.\`;
 
 this.links: [
-
+  
 
 ];
 }
-
 }`,
   links: [
     {
