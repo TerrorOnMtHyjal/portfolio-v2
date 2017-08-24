@@ -50,12 +50,12 @@ class Editor extends Component {
       if(line.text.includes("title:")){
         elt.style.textIndent = 0;
         elt.style.paddingLeft = 0;
-        elt.style.marginLeft = "-" + (charWidth * 2) + "px";
+        elt.style.marginLeft = "-" + (charWidth) + "px";
         elt.style.fontSize = "1.5em";
       }
     });
 
-    instance.setValue(beautify_js(instance.getValue()));
+    instance.setValue(beautify_js(instance.getValue(), { indent_size : 2 }));
 
     if(this.props.imgs){
       const node = ReactDOM.findDOMNode(this.refs.screenshots);

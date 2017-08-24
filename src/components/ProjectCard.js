@@ -6,7 +6,7 @@ import Screenshots from './Screenshots';
 
 const ProjectCardW = styled.div`
   display: flex;
-  width: 80%;
+  width: 95%;
 `;
 
 class ProjectCard extends Component {

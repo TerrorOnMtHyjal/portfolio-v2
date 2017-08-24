@@ -1,18 +1,18 @@
 export const code = {
   info: 
-`   constructor(desireToWork, projects){
-    super(desireToWork, projects);
+`constructor(desireToWork, projects){
+super(desireToWork, projects);
 
-    this.name = 'Jared Mohney';
-    this.title = 'Web Developer';
-    this.location = 'Longmont, CO';
-    this.skills = [ 'Javascript', 'React', 'Redux', 'CSS3', 'HTML5', 'Express', 'Node', ];
-    this.description = \`\${this.name} is a full stack javascript developer with an interest in esports, chinchillas and bettering himself through challenging work.\`;
-    this.github = "www.github.com/dustwise";
-    this.linkedIn = "www.linkedin.com/in/jaredmohney";
-    this.email = "jared.mohney@gmail.com";
+this.name = 'Jared Mohney';
+this.title = 'Web Developer';
+this.location = 'Longmont, CO';
+this.skills = [ 'Javascript', 'React', 'Redux', 'CSS3', 'HTML5', 'Express', 'Node', ];
+this.description = \`\${this.name} is a full stack javascript developer with an interest in esports, chinchillas and bettering himself through challenging work.\`;
+this.github = "www.github.com/dustwise";
+this.linkedIn = "www.linkedin.com/in/jaredmohney";
+this.email = "jared.mohney@gmail.com";
 
-    }`,
+}`,
 };
 
 export const comments = `
@@ -26,6 +26,7 @@ export const data = [
   {
     code:
 `{
+
 title: 'PogTracker',
 
 screenshots: [
@@ -42,6 +43,7 @@ features: [
 '- Provides all default emotes for each replay as well as subscriber emotes for partnered channels.',
 '- Saves relevant generated data for instant delivery to future users with MongoDB',
 ]
+
 },`,
     imgs: [require('../images/pogtracker-min.png'), require('../images/pogtracker-2.png'), ],
     links: {
@@ -53,6 +55,7 @@ features: [
   {
     code:
 `{
+
 title: 'ProtoPage',
 
 screenshots: [
@@ -69,6 +72,7 @@ features: [
 '- Find a font you like? Lock it in and continue to randomize the other elements',
 '- Got your fonts? Grab your css and get back to the fun stuff',
 ]
+
 },`,
     imgs: [require('../images/protopage-min.png')],
     links: {

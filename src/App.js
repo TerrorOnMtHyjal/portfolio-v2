@@ -16,6 +16,11 @@ const AppW = styled.div`
   height: 100vh;
   width: 100%;
   overflow-x: hidden;
+  font-size: 0.75rem;
+
+  @media screen and (min-width: 1024px){
+    font-size: 1.5rem;
+  }
 `;
 
 const Carlton = styled.img`

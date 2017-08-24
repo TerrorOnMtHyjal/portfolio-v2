@@ -10,7 +10,7 @@ const InfoCardW = styled.div`
   flex-flow: column;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  min-height: 100vh;
   width: 100%;
   // background-image: linear-gradient(to right, #4facfe 0%, #00f2fe 100%);
   background-color: #05386B;
@@ -34,7 +34,7 @@ const InfoCardW = styled.div`
 */
 
 const InnerW = styled.div`
-  width: 100%;
+  width: 95%;
   z-index: 1;
 `;
 
