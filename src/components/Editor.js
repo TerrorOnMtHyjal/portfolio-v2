@@ -12,6 +12,7 @@ var beautify_js = require('js-beautify').js_beautify
 require('../styles/editor.css');
 require('../styles/titleEditor.css');
 require('../styles/projectEditor.css');
+require('codemirror/addon/selection/active-line.js');
 
 const CodeW = styled.div`
   display: flex;
@@ -111,7 +112,8 @@ class Editor extends Component {
             mode: 'javascript',
             theme: this.props.theme ? this.props.theme : 'editor',
             inputStyle: 'textarea',
-            lineWrapping: true
+            lineWrapping: true,
+            styleActiveLine: true
           }}
         />
       </CodeW>
