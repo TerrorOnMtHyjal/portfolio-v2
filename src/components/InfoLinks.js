@@ -3,10 +3,8 @@ import styled from 'styled-components';
 
 const LinksW = styled.div`
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  width: 15%;
-  margin-left: 5vw;
+  margin-left: 6em;
   padding: 0.2em 0;
 `;
 
@@ -14,6 +12,7 @@ const LinkButton = styled.a`
   position: relative;
   color: #5cdb95;
   font-size: 2em;
+  margin-right: 1.5em;
 
   &::after {
     position: absolute;
