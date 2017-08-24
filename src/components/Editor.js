@@ -75,10 +75,10 @@ class Editor extends Component {
           ref={c => this.cm = c}
           value={this.props.code}
           options={{
-            lineWrapping: true,
             mode: 'javascript',
             theme: this.props.theme ? this.props.theme : 'editor',
-            inputStyle: 'textarea'
+            inputStyle: 'textarea',
+            lineWrapping: true
           }}
         />
       </CodeW>
