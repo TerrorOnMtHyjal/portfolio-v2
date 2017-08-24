@@ -34,7 +34,7 @@ const InfoCardW = styled.div`
 */
 
 const InnerW = styled.div`
-  width: 80%;
+  width: 100%;
   z-index: 1;
 `;
 

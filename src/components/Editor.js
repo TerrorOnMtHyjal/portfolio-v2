@@ -15,6 +15,7 @@ require('../styles/projectEditor.css');
 const CodeW = styled.div`
   display: flex;
   overflow: hidden;
+  width: 100%;
 `;
 
 class Editor extends Component {
@@ -44,6 +45,7 @@ class Editor extends Component {
       var off = methods.countColumn(line.text, null, cm.getOption("tabSize")) * charWidth;
       elt.style.textIndent = "-" + off + "px";
       elt.style.paddingLeft = (basePadding + off) + "px";
+      console.log("?", line);
 
       if(line.text.includes("title:")){
         elt.style.textIndent = 0;
@@ -73,15 +75,14 @@ class Editor extends Component {
           ref={c => this.cm = c}
           value={this.props.code}
           options={{
+            lineWrapping: true,
             mode: 'javascript',
             theme: this.props.theme ? this.props.theme : 'editor',
-            lineWrapping: true,
-            lineNumber: true
+            inputStyle: 'textarea'
           }}
         />
       </CodeW>
     );
   }
 }
-
 export default Editor;
