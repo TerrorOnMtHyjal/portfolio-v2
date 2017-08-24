@@ -88,10 +88,30 @@ function generateAnimation(length){
 class InfoCard extends Component {
 
   componentDidMount(){
-    const instance = this.infoTitle.cm.getCodeMirror();
+    const instance = this.infoCode.cm.getCodeMirror();
+    const lines = instance.doc.children[0].lines;
+    const firstLine = lines[0].text;
+    const lastLine = lines[lines.length - 1].text;
 
-    this.infoTitle.cm.focus();
-    instance.setCursor(instance.lineCount(), 0);
+    // console.log(firstLine, lastLine);
+
+    instance.on("renderLine", function(cm, line, elt) {
+      console.log(line)
+      // var off = methods.countColumn(line.text, null, cm.getOption("tabSize")) * charWidth;
+      // elt.style.textIndent = "-" + off + "px";
+      // elt.style.paddingLeft = (basePadding + off) + "px";
+
+      // // console.log(line)
+      // if(line.text.includes("title:")){
+      //   elt.style.textIndent = 0;
+      //   elt.style.paddingLeft = 0;
+      //   elt.style.marginLeft = "-" + (charWidth) + "px";
+      //   elt.style.fontSize = "1.5em";
+      // }
+    });
+
+    // this.infoTitle.cm.focus();
+    // instance.setCursor(instance.lineCount(), 0);
   }
 
   generateBars(amount){
@@ -118,9 +138,9 @@ class InfoCard extends Component {
     return (
       <InfoCardW>
         <InnerW>
-          <Editor ref={e => this.infoTitle = e} code="class JaredMohney extends Developer {" theme={'titleEditor'} />
-          <Editor code={code.info}/>
-          <Editor code="}" theme={'titleEditor'} />
+          {/*<Editor ref={e => this.infoTitle = e} code="class JaredMohney extends Developer {" theme={'titleEditor'} />*/}
+          <Editor ref={e => this.infoCode = e} code={code.info} info/>
+          {/*<Editor code="}" theme={'titleEditor'} />*/}
         </InnerW>
         <Bars>
           {this.generateBars(250)}

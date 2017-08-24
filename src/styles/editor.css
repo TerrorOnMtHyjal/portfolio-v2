@@ -64,10 +64,19 @@
 	color: #db8a5c;
 }
 .cm-s-editor .cm-variable-2 {
-	color: #379683;
+	color: #db8a5c;
+}
+.cm-s-editor .cm-variable-info {
+	color: #5cdb95;
 }
 .cm-s-editor .cm-property {
 	color: #edf5e1;
+}
+.cm-s-editor .cm-def{
+	color: #db8a5c;
+}
+.cm-s-editor .cm-def-info{
+	color: #5cdb95;
 }
 .cm-s-editor .cm-atom {
 	color: null;

@@ -1,6 +1,8 @@
 export const code = {
   info: 
-`constructor(desireToWork, projects){
+`class JaredMohney extends Developer {
+
+constructor(desireToWork, projects){
 super(desireToWork, projects);
 
 this.name = 'Jared Mohney';
@@ -11,6 +13,8 @@ this.description = \`\${this.name} is a full stack javascript developer with an 
 this.github = "www.github.com/dustwise";
 this.linkedIn = "www.linkedin.com/in/jaredmohney";
 this.email = "jared.mohney@gmail.com";
+
+}
 
 }`,
 };
