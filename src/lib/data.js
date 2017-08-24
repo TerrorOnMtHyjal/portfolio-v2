@@ -10,13 +10,28 @@ this.title = 'Web Developer';
 this.location = 'Longmont, CO';
 this.skills = [ 'Javascript', 'React', 'Redux', 'CSS3', 'HTML5', 'Express', 'Node', ];
 this.description = \`\${this.name} is a full stack javascript developer with an interest in esports, chinchillas and bettering himself through challenging work.\`;
-this.github = "www.github.com/dustwise";
-this.linkedIn = "www.linkedin.com/in/jaredmohney";
-this.email = "jared.mohney@gmail.com";
 
+this.links: [
+
+
+];
 }
 
 }`,
+  links: [
+    {
+      icon: "fa fa-github",
+      url: "www.github.com/dustwise"
+    },
+    {
+      icon: "fa fa-linkedin-square",
+      url: "www.linkedin.com/in/jaredmohney"
+    },
+    {
+      icon: "fa fa-envelope",
+      url: "jared.mohney@gmail.com"
+    },
+  ]
 };
 
 export const comments = `

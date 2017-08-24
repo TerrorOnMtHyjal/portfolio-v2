@@ -5,6 +5,7 @@ import ReactDOM from 'react-dom';
 import CodeMirror from 'react-codemirror';
 
 import Screenshots from './Screenshots';
+import InfoLinks from './InfoLinks';
 
 var beautify_js = require('js-beautify').js_beautify
 
@@ -87,12 +88,22 @@ class Editor extends Component {
         instance.refresh();
       }, 100);
     }
+
+    if(this.props.info){
+      const node = ReactDOM.findDOMNode(this.refs.infoLinks);
+      const screenshotWidget = instance.doc.addLineWidget(12, node);
+
+      setTimeout(function(){
+        instance.refresh();
+      }, 100);
+    }
   }
 
   render() {
     return (
       <CodeW>
         {this.props.imgs && <Screenshots ref="screenshots" imgs={this.props.imgs}/>}
+        {this.props.info && <InfoLinks ref="infoLinks" links={this.props.links}/>}
         <CodeMirror
           ref={c => this.cm = c}
           value={this.props.code}

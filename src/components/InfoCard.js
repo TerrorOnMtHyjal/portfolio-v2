@@ -96,7 +96,6 @@ class InfoCard extends Component {
     // console.log(firstLine, lastLine);
 
     instance.on("renderLine", function(cm, line, elt) {
-      console.log(line)
       // var off = methods.countColumn(line.text, null, cm.getOption("tabSize")) * charWidth;
       // elt.style.textIndent = "-" + off + "px";
       // elt.style.paddingLeft = (basePadding + off) + "px";
@@ -139,7 +138,7 @@ class InfoCard extends Component {
       <InfoCardW>
         <InnerW>
           {/*<Editor ref={e => this.infoTitle = e} code="class JaredMohney extends Developer {" theme={'titleEditor'} />*/}
-          <Editor ref={e => this.infoCode = e} code={code.info} info/>
+          <Editor ref={e => this.infoCode = e} code={code.info} links={code.links} info/>
           {/*<Editor code="}" theme={'titleEditor'} />*/}
         </InnerW>
         <Bars>
