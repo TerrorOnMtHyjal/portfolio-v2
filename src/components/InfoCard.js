@@ -33,7 +33,7 @@ const InfoCardW = styled.div`
 */
 
 const InnerW = styled.div`
-  width: 95%;
+  width: 100%;
   z-index: 1;
 `;
 
@@ -120,9 +120,7 @@ class InfoCard extends Component {
     return (
       <InfoCardW>
         <InnerW>
-          {/*<Editor ref={e => this.infoTitle = e} code="class JaredMohney extends Developer {" theme={'titleEditor'} />*/}
           <Editor ref={e => this.infoCode = e} code={code.info} links={code.links} info/>
-          {/*<Editor code="}" theme={'titleEditor'} />*/}
         </InnerW>
         <Bars>
           {this.generateBars(250)}

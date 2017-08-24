@@ -28,8 +28,11 @@
 
 .cm-s-editor .CodeMirror-lines {
 	padding: 8px 0;
+	width: 90%;
+	margin: 0 auto;
 }
 .cm-s-editor .CodeMirror-line {
+	position: relative;
 	padding: 0.15em 0;
 }
 .cm-s-editor .CodeMirror-gutters {
@@ -44,6 +47,10 @@
 	border-left: 3px solid #181818;
 }
 .cm-s-editor .CodeMirror-activeline-background {
+	position: absolute;
+	width: 100vw;
+	left: 50%;
+	margin-left: -50vw;
 	background: #2d2d2d;
 }
 .cm-s-editor .CodeMirror-selected {
