@@ -112,8 +112,7 @@ class Editor extends Component {
             mode: 'javascript',
             theme: this.props.theme ? this.props.theme : 'editor',
             inputStyle: 'textarea',
-            lineWrapping: true,
-            styleActiveLine: true
+            lineWrapping: true
           }}
         />
       </CodeW>
